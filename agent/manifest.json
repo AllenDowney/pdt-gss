@@ -1,0 +1,966 @@
+{
+ "pdt_version": "0.1.0",
+ "inputs_sha256": "58117917408e2e18a4c0399107efd5094623e6273bb440f5cf0f108c1c4bd262",
+ "dataset": "gss",
+ "max_tokens": 20000,
+ "shards": [
+  {
+   "kind": "table",
+   "title": "Release 7224r3a",
+   "basis": "every variable in the release",
+   "completeness": "complete",
+   "filter": {
+    "release": "7224r3a"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [],
+   "count": 50,
+   "files": [
+    {
+     "path": "shards/table/7224r3a.part1.jsonl",
+     "form": "jsonl",
+     "variables": 17,
+     "tokens": 18695
+    },
+    {
+     "path": "shards/table/7224r3a.part2.jsonl",
+     "form": "jsonl",
+     "variables": 13,
+     "tokens": 19078
+    },
+    {
+     "path": "shards/table/7224r3a.part3.jsonl",
+     "form": "jsonl",
+     "variables": 17,
+     "tokens": 19563
+    },
+    {
+     "path": "shards/table/7224r3a.part4.jsonl",
+     "form": "jsonl",
+     "variables": 3,
+     "tokens": 3677
+    },
+    {
+     "path": "shards/table/7224r3a.txt",
+     "form": "txt",
+     "variables": 50,
+     "tokens": 2331
+    }
+   ]
+  },
+  {
+   "kind": "group",
+   "title": "battery: battery-natspac",
+   "basis": "members of group battery-natspac (origin rule)",
+   "completeness": "complete_by_rule",
+   "filter": {
+    "group": "battery-natspac"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {
+    "battery_from_shared_stem": "0.1"
+   },
+   "notes": [],
+   "count": 18,
+   "files": [
+    {
+     "path": "shards/group/battery-natspac.part1.jsonl",
+     "form": "jsonl",
+     "variables": 13,
+     "tokens": 19390
+    },
+    {
+     "path": "shards/group/battery-natspac.part2.jsonl",
+     "form": "jsonl",
+     "variables": 5,
+     "tokens": 6645
+    },
+    {
+     "path": "shards/group/battery-natspac.txt",
+     "form": "txt",
+     "variables": 18,
+     "tokens": 876
+    }
+   ]
+  },
+  {
+   "kind": "group",
+   "title": "battery: battery-abdefect",
+   "basis": "members of group battery-abdefect (origin rule)",
+   "completeness": "complete_by_rule",
+   "filter": {
+    "group": "battery-abdefect"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {
+    "battery_from_shared_stem": "0.1"
+   },
+   "notes": [],
+   "count": 7,
+   "files": [
+    {
+     "path": "shards/group/battery-abdefect.jsonl",
+     "form": "jsonl",
+     "variables": 7,
+     "tokens": 8391
+    },
+    {
+     "path": "shards/group/battery-abdefect.txt",
+     "form": "txt",
+     "variables": 7,
+     "tokens": 475
+    }
+   ]
+  },
+  {
+   "kind": "scale",
+   "title": "Scale signature: spending_3",
+   "basis": "variables with this scale signature",
+   "completeness": "complete_by_rule",
+   "filter": {
+    "derived": {
+     "scale_signature": "spending_3"
+    }
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {
+    "scale_signature_from_valid_labels": "0.1"
+   },
+   "notes": [],
+   "count": 20,
+   "files": [
+    {
+     "path": "shards/scale/spending-3.part1.jsonl",
+     "form": "jsonl",
+     "variables": 13,
+     "tokens": 19395
+    },
+    {
+     "path": "shards/scale/spending-3.part2.jsonl",
+     "form": "jsonl",
+     "variables": 7,
+     "tokens": 9432
+    },
+    {
+     "path": "shards/scale/spending-3.txt",
+     "form": "txt",
+     "variables": 20,
+     "tokens": 968
+    }
+   ]
+  },
+  {
+   "kind": "scale",
+   "title": "Scale signature: yes_no",
+   "basis": "variables with this scale signature",
+   "completeness": "complete_by_rule",
+   "filter": {
+    "derived": {
+     "scale_signature": "yes_no"
+    }
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {
+    "scale_signature_from_valid_labels": "0.1"
+   },
+   "notes": [],
+   "count": 7,
+   "files": [
+    {
+     "path": "shards/scale/yes-no.jsonl",
+     "form": "jsonl",
+     "variables": 7,
+     "tokens": 8393
+    },
+    {
+     "path": "shards/scale/yes-no.txt",
+     "form": "txt",
+     "variables": 7,
+     "tokens": 477
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Abortion",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Abortion"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 7,
+   "files": [
+    {
+     "path": "shards/subject/abortion.jsonl",
+     "form": "jsonl",
+     "variables": 7,
+     "tokens": 8404
+    },
+    {
+     "path": "shards/subject/abortion.txt",
+     "form": "txt",
+     "variables": 7,
+     "tokens": 488
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Age",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Age"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/age.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1302
+    },
+    {
+     "path": "shards/subject/age.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 148
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Aged",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Aged"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/aged.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1543
+    },
+    {
+     "path": "shards/subject/aged.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 164
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Capital Punishment",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Capital Punishment"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/capital-punishment.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1336
+    },
+    {
+     "path": "shards/subject/capital-punishment.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 174
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Crime",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Crime"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/crime.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1614
+    },
+    {
+     "path": "shards/subject/crime.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 171
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Date Of Interview",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Date Of Interview"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/date-of-interview.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 776
+    },
+    {
+     "path": "shards/subject/date-of-interview.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 152
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Drug Use And Addiction",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Drug Use And Addiction"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/drug-use-and-addiction.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1626
+    },
+    {
+     "path": "shards/subject/drug-use-and-addiction.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 179
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Education",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Education"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/education.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1624
+    },
+    {
+     "path": "shards/subject/education.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 178
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Environment",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Environment"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 2,
+   "files": [
+    {
+     "path": "shards/subject/environment.jsonl",
+     "form": "jsonl",
+     "variables": 2,
+     "tokens": 2749
+    },
+    {
+     "path": "shards/subject/environment.txt",
+     "form": "txt",
+     "variables": 2,
+     "tokens": 227
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Federal Government",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Federal Government"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 19,
+   "files": [
+    {
+     "path": "shards/subject/federal-government.part1.jsonl",
+     "form": "jsonl",
+     "variables": 13,
+     "tokens": 19409
+    },
+    {
+     "path": "shards/subject/federal-government.part2.jsonl",
+     "form": "jsonl",
+     "variables": 6,
+     "tokens": 8324
+    },
+    {
+     "path": "shards/subject/federal-government.txt",
+     "form": "txt",
+     "variables": 19,
+     "tokens": 935
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Gays And Lesbians",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Gays And Lesbians"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/gays-and-lesbians.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1236
+    },
+    {
+     "path": "shards/subject/gays-and-lesbians.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 201
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Guns",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Guns"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/guns.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1189
+    },
+    {
+     "path": "shards/subject/guns.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 183
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Interview",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Interview"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 3,
+   "files": [
+    {
+     "path": "shards/subject/interview.jsonl",
+     "form": "jsonl",
+     "variables": 3,
+     "tokens": 2277
+    },
+    {
+     "path": "shards/subject/interview.txt",
+     "form": "txt",
+     "variables": 3,
+     "tokens": 197
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Marijuana",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Marijuana"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/marijuana.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1150
+    },
+    {
+     "path": "shards/subject/marijuana.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 175
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Political",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Political"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 2,
+   "files": [
+    {
+     "path": "shards/subject/political.jsonl",
+     "form": "jsonl",
+     "variables": 2,
+     "tokens": 2675
+    },
+    {
+     "path": "shards/subject/political.txt",
+     "form": "txt",
+     "variables": 2,
+     "tokens": 247
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Race",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Race"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 5,
+   "files": [
+    {
+     "path": "shards/subject/race.jsonl",
+     "form": "jsonl",
+     "variables": 5,
+     "tokens": 4846
+    },
+    {
+     "path": "shards/subject/race.txt",
+     "form": "txt",
+     "variables": 5,
+     "tokens": 446
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Rape",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Rape"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/rape.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 1303
+    },
+    {
+     "path": "shards/subject/rape.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 175
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Religion",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Religion"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 5,
+   "files": [
+    {
+     "path": "shards/subject/religion.jsonl",
+     "form": "jsonl",
+     "variables": 5,
+     "tokens": 6365
+    },
+    {
+     "path": "shards/subject/religion.txt",
+     "form": "txt",
+     "variables": 5,
+     "tokens": 370
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Sample",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Sample"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/subject/sample.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 759
+    },
+    {
+     "path": "shards/subject/sample.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 148
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Sex",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Sex"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 2,
+   "files": [
+    {
+     "path": "shards/subject/sex.jsonl",
+     "form": "jsonl",
+     "variables": 2,
+     "tokens": 2440
+    },
+    {
+     "path": "shards/subject/sex.txt",
+     "form": "txt",
+     "variables": 2,
+     "tokens": 215
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Spending",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Spending"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 19,
+   "files": [
+    {
+     "path": "shards/subject/spending.part1.jsonl",
+     "form": "jsonl",
+     "variables": 13,
+     "tokens": 19404
+    },
+    {
+     "path": "shards/subject/spending.part2.jsonl",
+     "form": "jsonl",
+     "variables": 6,
+     "tokens": 8319
+    },
+    {
+     "path": "shards/subject/spending.txt",
+     "form": "txt",
+     "variables": 19,
+     "tokens": 930
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: Split Ballots",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "Split Ballots"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 30,
+   "files": [
+    {
+     "path": "shards/subject/split-ballots.part1.jsonl",
+     "form": "jsonl",
+     "variables": 14,
+     "tokens": 18891
+    },
+    {
+     "path": "shards/subject/split-ballots.part2.jsonl",
+     "form": "jsonl",
+     "variables": 14,
+     "tokens": 19268
+    },
+    {
+     "path": "shards/subject/split-ballots.part3.jsonl",
+     "form": "jsonl",
+     "variables": 2,
+     "tokens": 2697
+    },
+    {
+     "path": "shards/subject/split-ballots.txt",
+     "form": "txt",
+     "variables": 30,
+     "tokens": 1524
+    }
+   ]
+  },
+  {
+   "kind": "subject",
+   "title": "Subject: United States",
+   "basis": "topic tags from gssrdoc-json",
+   "completeness": "complete",
+   "filter": {
+    "topic": "United States"
+   },
+   "releases": [
+    "7224r3a"
+   ],
+   "n_in_scope": 50,
+   "rule_versions": {},
+   "notes": [
+    "topic tags from the publisher's subject list; complete with respect to that list (provisional rule, PROJECT_BOARD.md Task 14)"
+   ],
+   "count": 20,
+   "files": [
+    {
+     "path": "shards/subject/united-states.part1.jsonl",
+     "form": "jsonl",
+     "variables": 13,
+     "tokens": 19406
+    },
+    {
+     "path": "shards/subject/united-states.part2.jsonl",
+     "form": "jsonl",
+     "variables": 7,
+     "tokens": 9444
+    },
+    {
+     "path": "shards/subject/united-states.txt",
+     "form": "txt",
+     "variables": 20,
+     "tokens": 980
+    }
+   ]
+  }
+ ]
+}

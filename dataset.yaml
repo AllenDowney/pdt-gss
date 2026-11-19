@@ -1,0 +1,47 @@
+standard_version: "0.1"
+id: gss
+title: General Social Survey
+publisher:
+  name: NORC at the University of Chicago
+  url: https://www.norc.org/
+url: https://gss.norc.org/
+description: >
+  A repeated cross-sectional survey of US adults, 1972 to 2024, about
+  attitudes, behaviors and attributes.
+citation: >
+  Davern, Michael; Bautista, Rene; Freese, Jeremy; Herd, Pamela; and Morgan,
+  Stephen L.; General Social Survey 1972-2024. [Machine-readable data file].
+  Principal Investigator, Michael Davern; Co-Principal Investigators, Rene
+  Bautista, Jeremy Freese, Pamela Herd, and Stephen L. Morgan. NORC ed.
+  Chicago, 2026. 1 datafile (Release 3a) and 1 codebook (2024 Release 3a).
+terms:
+  url: https://gss.norc.org/terms-and-conditions.html
+  summary: >
+    The 2024 Release 3a codebook grants permission to use, copy, modify, publish
+    and distribute it, provided NORC's copyright and permission notice is
+    included and distribution is free of charge (see NOTICE.md). NORC's terms
+    page asks for citation and disclaims warranty; it does not address
+    redistributing the public-use data files. Allen Downey decided the data
+    files may ship, because they are freely downloadable public-use files.
+  data: ship
+  documentation: ship
+  metadata: ship
+  llm_processing: allowed
+  reviewed_by: Allen Downey
+  reviewed_on: "2026-11-19"
+naming:
+  case: lower
+  note: The Stata file and gssrdoc use lowercase names; NORC's PDF codebook uses uppercase.
+dimensions:
+  wave:
+    label: year
+  form:
+    label: ballot
+    note: >
+      From 1988 on, the sample is split across ballots A, B and C (and D from
+      2002), and many items are asked on some ballots only.
+releases:
+  - id: 7224r3a
+    label: GSS 1972-2024 Cross-Sectional Cumulative Data, Release 3a
+    status: current
+    sources: [gssrdoc-json, gss-stata-7224r3a]

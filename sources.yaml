@@ -1,0 +1,50 @@
+sources:
+  - id: gssrdoc-json
+    title: gssrdoc gss_doc table, converted to JSON (gssrdoc_full.json)
+    kind: upstream_package
+    format: json
+    url: https://github.com/kjhealy/gssrdoc
+    path: data/raw/gssrdoc_full.json
+    releases: [7224r3a]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: >
+      Install gssrdoc, then run codebook/convert_gssrdoc_to_json.R from the
+      CultureWar repo (https://github.com/AllenDowney/CultureWar), which writes
+      extracted/gssrdoc_full.json. To be replaced by a pinned conversion in
+      build/.
+    fetched_on: "2026-02-07"
+    sha256: 93bc1791b1325cbc9a18dae8fca94df41cf29c772371b3db9a21447b826e6fe0
+    bytes: 21348980
+    note: >
+      gssrdoc scrapes GSS Data Explorer. The gssrdoc version used isn't
+      recorded, and which GSS release it matches is unverified; the build
+      compares it with the 7224r3a data file.
+  - id: gss-stata-7224r3a
+    title: GSS 1972-2024 cumulative file, Stata, Release 3a
+    kind: data
+    format: stata
+    path: data/raw/gss7224_r3a.dta.gz
+    releases: [7224r3a]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: >
+      Download the 1972-2024 cross-sectional cumulative Stata file from
+      https://gss.norc.org/get-the-data/stata, unzip it, and gzip
+      gss7224_r3a.dta to data/raw/gss7224_r3a.dta.gz.
+    fetched_on: "2026-09-07"
+    sha256: 99c44a51d828f4c6b36028739b04f7dda9585206c2a9eba708e4ea64ff158458
+    bytes: 45268562
+  - id: gss-codebook-2024r3a
+    title: GSS 2024 Cross-Section Codebook, Release 3a
+    kind: codebook
+    format: pdf
+    path: data/raw/GSS 2024 Codebook R3a.pdf
+    releases: [7224r3a]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: Download from the documentation page at https://gss.norc.org/.
+    fetched_on: "2026-09-07"
+    sha256: cc4e7e15de7cc95db9e4ddbdad2902683caec61321eef8c96df369feda596df2
+    bytes: 3356354
+    note: Source of the license in NOTICE.md. Not yet parsed.

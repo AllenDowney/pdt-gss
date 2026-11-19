@@ -35,8 +35,11 @@ naming:
 dimensions:
   wave:
     label: year
+    column: year
   form:
     label: ballot
+    column: ballot
+    codes: {"1": A, "2": B, "3": C, "4": D}
     note: >
       From 1988 on, the sample is split across ballots A, B and C (and D from
       2002), and many items are asked on some ballots only.

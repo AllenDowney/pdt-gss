@@ -1,4 +1,6 @@
 PYTHON ?= python
+# A PublicDataToolkit checkout. Or `pip install -e $(PDT)` and run `pdt check`.
+PDT ?= ../PublicDataToolkit
 
 .PHONY: build check
 
@@ -6,6 +8,6 @@ PYTHON ?= python
 build:
 	$(PYTHON) build/build_slice.py
 
-## Check the records against the PublicDataToolkit standard
+## Check the repo against the PublicDataToolkit standard (pdt check)
 check:
-	$(PYTHON) tests/check_metadata.py
+	PYTHONPATH=$(PDT)/lib $(PYTHON) -m pdt check .

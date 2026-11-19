@@ -5,9 +5,10 @@ release: "7224r3a"
 author: Allen Downey
 date: "2026-11-19"
 
-# 45 variables: design variables, two complete batteries, two ballot-split
+# 50 variables: design variables, two complete batteries, two ballot-split
 # items, the race items with known corrections, and a few others, including
-# grass (marijuana) for the cross-survey topic query.
+# grass (marijuana), and religion items for the cross-survey topic query
+# (religion, chosen 2026-11-19).
 variables:
   design: [year, id, ballot, mode, wtssps, age, sex]
   abortion_battery: [abdefect, abnomore, abhlth, abpoor, abrape, absingle, abany]
@@ -17,20 +18,21 @@ variables:
   ballot_split: [natracey, natfarey]
   race: [racopen, racfew, rachaf, racmost, racschol]
   other: [grass, homosex, cappun, gunlaw, polviews, partyid]
+  religion: [relig, attend, reliten, pray, bible]
 
 # What kind of quantity each variable's valid values are (STANDARD.md §4.1).
 measure:
   identifier: [id]
   weight: [wtssps]
   continuous: [age, year]
-  ordinal: [polviews, homosex,
+  ordinal: [polviews, homosex, attend, reliten, pray,
             natspac, natenvir, natheal, natcity, natcrime, natdrug, nateduc,
             natrace, natarms, nataid, natfare, natroad, natsoc, natmass,
             natpark, natchld, natsci, natenrgy, natracey, natfarey]
   categorical: [ballot, mode, sex,
                 abdefect, abnomore, abhlth, abpoor, abrape, absingle, abany,
                 racopen, racfew, rachaf, racmost, racschol,
-                grass, cappun, gunlaw, partyid]
+                grass, cappun, gunlaw, partyid, relig, bible]
 
 # Ends of valid ranges that are top- or bottom-coded.
 top_coded:

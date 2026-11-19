@@ -118,3 +118,9 @@
 {"target": {"variable": "polviews"}, "kind": "topic", "value": "Political", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
 {"target": {"variable": "polviews"}, "kind": "topic", "value": "Split Ballots", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
 {"target": {"variable": "partyid"}, "kind": "topic", "value": "Political", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
+{"target": {"variable": "relig"}, "kind": "topic", "value": "Religion", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
+{"target": {"variable": "attend"}, "kind": "topic", "value": "Religion", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
+{"target": {"variable": "reliten"}, "kind": "topic", "value": "Religion", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
+{"target": {"variable": "pray"}, "kind": "topic", "value": "Religion", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
+{"target": {"variable": "bible"}, "kind": "topic", "value": "Religion", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}
+{"target": {"variable": "bible"}, "kind": "topic", "value": "Split Ballots", "origin": {"origin": "upstream_package", "source": "gssrdoc-json"}}

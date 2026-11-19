@@ -37,6 +37,7 @@ META = ROOT / "metadata"
 GSSRDOC = "gssrdoc-json"
 STATA = "gss-stata-7224r3a"
 RULE_VERSION = "0.1"
+MISSING_RULE_VERSION = "0.2"  # gss_extended_missing_types; 0.2 types ".z" (see codebook) as unspecified
 
 # ---------------------------------------------------------------- rules
 
@@ -83,7 +84,7 @@ def parse_value_labels(text):
 
 # Rule gss_extended_missing_types: missing type from the label NORC gives each
 # extended missing value. The data file says the code is missing; this rule
-# only says why. ".z" "see codebook" says nothing, so it gets "other".
+# only says why. ".z" "see codebook" gives no reason, so it's "unspecified".
 GSS_MISSING_TYPES = {
     "don't know": ["dk"],
     "iap": ["inap"],
@@ -96,7 +97,7 @@ GSS_MISSING_TYPES = {
     "uncodeable": ["uncodeable"],
     "not available in this release": ["not_available"],
     "not available in this year": ["not_asked"],
-    "see codebook": ["other"],
+    "see codebook": ["unspecified"],
 }
 
 # Labels on ordinary numeric codes that look like missing values. Those codes
@@ -109,6 +110,11 @@ SCALE_SIGNATURES = {
     ("yes", "no"): "yes_no",
     ("too little", "about right", "too much"): "spending_3",
 }
+
+# The default origin for every missing code (provenance.codes).
+CODES_ORIGIN = {"origin": "rule", "rule": "gss_extended_missing_types", "rule_version": MISSING_RULE_VERSION,
+                "source": STATA,
+                "note": "Stata extended missing values that occur in this variable; types from their gssrdoc labels."}
 
 # --------------------------------------------------------------- inputs
 
@@ -185,18 +191,14 @@ def build_variable(name, spec, measure, gdoc, stata):
     for code in sorted(occurring):
         label = missing_labels.get(code)
         types = GSS_MISSING_TYPES.get(label)
-        origin = {"origin": "rule", "rule": "gss_extended_missing_types", "rule_version": RULE_VERSION,
-                  "source": STATA,
-                  "note": f"Extended missing value that occurs {occurring[code]} times in this variable; "
-                          "type from its gssrdoc label."}
         if types is None:
             values.append({"code": code, "label": label or "", "kind": "unresolved",
-                           "origin": {**origin, "note": f"Occurs {occurring[code]} times; no label, "
-                                                        "or a label the rule doesn't know."}})
+                           "origin": {**CODES_ORIGIN, "note": f"Occurs {occurring[code]} times; no label, "
+                                                              "or a label the rule doesn't know."}})
             report.append(f"`{name}` {code}: unlabeled or unknown label {label!r}; marked unresolved")
         else:
-            values.append({"code": code, "label": label, "kind": "missing", "missing_types": types,
-                           "origin": origin})
+            # The record's provenance.codes is the origin (STANDARD.md §4.2).
+            values.append({"code": code, "label": label, "kind": "missing", "missing_types": types})
 
     record = {"dataset": "gss", "release": spec["release"], "name": name}
     if var_labels.get(name):
@@ -263,6 +265,8 @@ def build_variable(name, spec, measure, gdoc, stata):
         fields["valid_range"] = {"origin": "data_file", "source": STATA,
                                  "note": "Min and max of the values that occur; top-coding from build/slice.yaml."}
     record["provenance"] = {"record": {"origin": "upstream_package", "source": GSSRDOC}, "fields": fields}
+    if any(v["kind"] != "valid" for v in values):
+        record["provenance"]["codes"] = CODES_ORIGIN
 
     modules = [v for row in json.loads(entry["module_df_json"] or "[]") for v in row.values()]
     if modules:

@@ -1,7 +1,16 @@
 # The snake_case slice of the GSS (PublicDataToolkit Task 5, step 2).
 # Hand-entered facts here are recorded with origin: hand.
 
-release: "7224r3a"
+# Releases built from the same documentation, gssrdoc 0.9 (Release 3), each with
+# its own Stata file. 7224r3a has no gssrdoc version of its own yet (Task 21).
+releases:
+  "7224r3":
+    stata: gss7224_r3.dta.gz
+    stata_source: gss-stata-7224r3
+  "7224r3a":
+    stata: gss7224_r3a.dta.gz
+    stata_source: gss-stata-7224r3a
+    documented_by: 7224r3
 author: Allen Downey
 date: "2026-11-19"
 

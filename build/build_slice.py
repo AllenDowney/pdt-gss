@@ -3,10 +3,17 @@
 Usage:
     python build/build_slice.py
 
-Reads build/slice.yaml, data/raw/gssrdoc_full.json and
-data/raw/gss7224_r3a.dta.gz. Writes metadata/releases/<release>/variables.jsonl,
+Reads build/slice.yaml, data/interim/gssrdoc-0.9.json (made by `make gssrdoc`
+from gssrdoc's gss_doc.rda, pinned in sources.yaml) and each release's Stata
+file in data/raw/. Writes metadata/releases/<release>/variables.jsonl for every
+release in slice.yaml,
 metadata/groups.jsonl (batteries, and gssrdoc's subjects as `subject` groups),
-metadata/derived/scale_signature.jsonl and build/report.md.
+metadata/derived/scale_signature.jsonl and build/report.md. Groups and derived
+properties come from gssrdoc alone, so they are the same for every release.
+
+gssrdoc 0.9 documents Release 3. A release whose documentation is another
+release's (`documented_by` in slice.yaml, as for 7224r3a) says so in each
+record's provenance.
 
 Corrections (metadata/corrections.jsonl) are written by hand and never touched
 here.
@@ -34,8 +41,8 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 META = ROOT / "metadata"
 
-GSSRDOC = "gssrdoc-json"
-STATA = "gss-stata-7224r3a"
+GSSRDOC = "gssrdoc"
+GSSRDOC_JSON = ROOT / "data" / "interim" / "gssrdoc-0.9.json"
 RULE_VERSION = "0.1"
 MISSING_RULE_VERSION = "0.2"  # gss_extended_missing_types; 0.2 types ".z" (see codebook) as unspecified
 
@@ -112,9 +119,10 @@ SCALE_SIGNATURES = {
 }
 
 # The default origin for every missing code (provenance.codes).
-CODES_ORIGIN = {"origin": "rule", "rule": "gss_extended_missing_types", "rule_version": MISSING_RULE_VERSION,
-                "source": STATA,
-                "note": "Stata extended missing values that occur in this variable; types from their gssrdoc labels."}
+def codes_origin(stata_source):
+    return {"origin": "rule", "rule": "gss_extended_missing_types", "rule_version": MISSING_RULE_VERSION,
+            "source": stata_source,
+            "note": "Stata extended missing values that occur in this variable; types from their gssrdoc labels."}
 
 # --------------------------------------------------------------- inputs
 
@@ -128,13 +136,13 @@ def load_slice():
 
 
 def load_gssrdoc():
-    rows = json.loads((RAW / "gssrdoc_full.json").read_text())
+    rows = json.loads(GSSRDOC_JSON.read_text())
     return {row[0]["variable"]: row[0] for row in rows}
 
 
-def load_stata(names):
+def load_stata(names, filename):
     """Return (variable labels, frame with extended missing values kept)."""
-    path = RAW / "gss7224_r3a.dta.gz"
+    path = RAW / filename
     with pd.io.stata.StataReader(path) as reader:
         var_labels = reader.variable_labels()
     frame = pd.read_stata(path, columns=names, convert_missing=True, convert_categoricals=False)
@@ -167,8 +175,10 @@ def availability_from_gssrdoc(entry):
     return out
 
 
-def build_variable(name, spec, measure, gdoc, stata):
+def build_variable(name, spec, measure, gdoc, stata, release, rel_spec):
     var_labels, frame = stata
+    stata_source = rel_spec["stata_source"]
+    codes = codes_origin(stata_source)
     entry = gdoc[name]
     col = frame[name]
     report = []
@@ -193,14 +203,14 @@ def build_variable(name, spec, measure, gdoc, stata):
         types = GSS_MISSING_TYPES.get(label)
         if types is None:
             values.append({"code": code, "label": label or "", "kind": "unresolved",
-                           "origin": {**CODES_ORIGIN, "note": f"Occurs {occurring[code]} times; no label, "
+                           "origin": {**codes, "note": f"Occurs {occurring[code]} times; no label, "
                                                               "or a label the rule doesn't know."}})
             report.append(f"`{name}` {code}: unlabeled or unknown label {label!r}; marked unresolved")
         else:
             # The record's provenance.codes is the origin (STANDARD.md §4.2).
             values.append({"code": code, "label": label, "kind": "missing", "missing_types": types})
 
-    record = {"dataset": "gss", "release": spec["release"], "name": name}
+    record = {"dataset": "gss", "release": release, "name": name}
     if var_labels.get(name):
         record["label"] = var_labels[name]
 
@@ -237,21 +247,21 @@ def build_variable(name, spec, measure, gdoc, stata):
         ok = col.map(lambda v: code_of(v) is None and pd.notna(v))
         counts = frame.loc[ok, "year"].astype(int).value_counts().sort_index()
         avail = [{"wave": int(y), "n": int(k)} for y, k in counts.items()]
-        avail_origin = {"origin": "data_file", "source": STATA,
+        avail_origin = {"origin": "data_file", "source": stata_source,
                         "note": "gssrdoc has no per-year counts for this variable; years and n counted in the data."}
     if avail:
         record["availability"] = avail
     record["source_location"] = {"source": GSSRDOC, "url": entry["norc_url"], "upstream_id": int(entry["norc_id"])}
 
     fields = {
-        "label": {"origin": "data_file", "source": STATA},
+        "label": {"origin": "data_file", "source": stata_source},
         "values": {"origin": "upstream_package", "source": GSSRDOC,
                    "note": "Valid codes and labels from gssrdoc; missing codes are the Stata extended "
                            "missing values that occur in this variable in the data file."},
     }
     if "storage_type" in record:
         fields["storage_type"] = {"origin": "rule", "rule": "storage_type_from_values", "rule_version": RULE_VERSION,
-                                  "source": STATA, "note": "integer if every value in the data is whole, else float."}
+                                  "source": stata_source, "note": "integer if every value in the data is whole, else float."}
     if "questions" in record:
         fields["questions"] = {"origin": "rule", "rule": "gssrdoc_text", "rule_version": RULE_VERSION,
                                "source": GSSRDOC,
@@ -262,11 +272,18 @@ def build_variable(name, spec, measure, gdoc, stata):
     if avail_origin:
         fields["availability"] = avail_origin
     if "valid_range" in record:
-        fields["valid_range"] = {"origin": "data_file", "source": STATA,
+        fields["valid_range"] = {"origin": "data_file", "source": stata_source,
                                  "note": "Min and max of the values that occur; top-coding from build/slice.yaml."}
-    record["provenance"] = {"record": {"origin": "upstream_package", "source": GSSRDOC}, "fields": fields}
+    record_origin = {"origin": "upstream_package", "source": GSSRDOC}
+    if rel_spec.get("documented_by"):
+        record_origin["note"] = (
+            f"gssrdoc 0.9 documents release {rel_spec['documented_by']}, not {release}: question text, value "
+            f"labels, availability and subjects describe {rel_spec['documented_by']}. The variable label and "
+            f"the missing codes that occur come from this release's Stata file. NORC's release notes list "
+            f"what changed (metadata/links.jsonl).")
+    record["provenance"] = {"record": record_origin, "fields": fields}
     if any(v["kind"] != "valid" for v in values):
-        record["provenance"]["codes"] = CODES_ORIGIN
+        record["provenance"]["codes"] = codes
 
     modules = [v for row in json.loads(entry["module_df_json"] or "[]") for v in row.values()]
     if modules:
@@ -364,18 +381,20 @@ def main():
     gdoc = load_gssrdoc()
     missing = [n for n in names if n not in gdoc]
     assert not missing, f"not in gssrdoc: {missing}"
-    stata = load_stata(names)
-    frame = stata[1]
 
-    records, notes, c5 = [], [], []
-    for name in names:
-        record, report = build_variable(name, spec, measure, gdoc, stata)
-        records.append(record)
-        notes.extend(report)
-        if name not in {"year", "id", "ballot"}:
-            c5.extend(check_availability(record, frame))
-
-    write_jsonl(META / "releases" / spec["release"] / "variables.jsonl", records)
+    by_release = {}
+    for release, rel_spec in spec["releases"].items():
+        stata = load_stata(names, rel_spec["stata"])
+        frame = stata[1]
+        records, notes, c5 = [], [], []
+        for name in names:
+            record, report = build_variable(name, spec, measure, gdoc, stata, release, rel_spec)
+            records.append(record)
+            notes.extend(report)
+            if name not in {"year", "id", "ballot"}:
+                c5.extend(check_availability(record, frame))
+        write_jsonl(META / "releases" / release / "variables.jsonl", records)
+        by_release[release] = (records, notes, c5)
 
     groups, partial = build_groups(names, gdoc)
     subjects = subject_groups(names, gdoc)
@@ -384,6 +403,8 @@ def main():
     if old.exists():
         old.unlink()  # subjects were annotations before STANDARD.md §5.1 made them groups
 
+    # Valid labels come from gssrdoc, so every release gives the same signatures.
+    records = next(iter(by_release.values()))[0]
     signatures = []
     for r in records:
         valid = tuple(v["label"] for v in r.get("values", []) if v["kind"] == "valid")
@@ -393,9 +414,9 @@ def main():
                                "rule": "scale_signature_from_valid_labels", "rule_version": RULE_VERSION})
     write_jsonl(META / "derived" / "scale_signature.jsonl", signatures)
 
-    write_report(spec, records, groups, partial, subjects, signatures, notes, c5)
-    print(f"{len(records)} variables, {len(groups)} batteries, {len(subjects)} subject groups, "
-          f"{len(signatures)} scale signatures; see build/report.md")
+    write_report(spec, by_release, groups, partial, subjects, signatures)
+    print(f"{len(by_release)} releases x {len(records)} variables, {len(groups)} batteries, "
+          f"{len(subjects)} subject groups, {len(signatures)} scale signatures; see build/report.md")
 
 
 def write_jsonl(path, records):
@@ -405,41 +426,51 @@ def write_jsonl(path, records):
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
 
-def write_report(spec, records, groups, partial, subjects, signatures, notes, c5):
-    n_missing = collections.Counter(v["code"] for r in records for v in r.get("values", [])
-                                    if v["kind"] == "missing")
+def write_report(spec, by_release, groups, partial, subjects, signatures):
     lines = [
-        f"# Build report: GSS slice, release {spec['release']}",
+        f"# Build report: GSS slice, releases {', '.join(by_release)}",
         "",
         "Generated by `build/build_slice.py`. Do not edit.",
         "",
-        f"- Variables: {len(records)}",
-        f"- With question text: {sum('questions' in r for r in records)}",
-        f"- With a stem/item split: {sum(any('stem' in q for q in r.get('questions', [])) for r in records)}",
+        "Documentation for every release: gssrdoc 0.9 (Release 3). "
+        + "".join(f"Release {r} is documented by {s['documented_by']}'s text. "
+                  for r, s in spec["releases"].items() if s.get("documented_by")),
+        "",
         f"- Groups (complete batteries): {len(groups)}",
         f"- Subject groups from gssrdoc: {len(subjects)}",
         f"- Scale signatures: {len(signatures)}",
-        "",
-        "## Missing codes that occur, by number of variables",
-        "",
-        "| Code | Variables |",
-        "|---|---|",
-        *[f"| `{c}` | {k} |" for c, k in sorted(n_missing.items())],
         "",
         "## Batteries only partly in the slice (no group written)",
         "",
         *([f"- {len(m)} members, {len(s)} in the slice ({', '.join(s)}): {', '.join(m)}" for m, s in partial]
           or ["None."]),
         "",
-        "## Values and labels to look at",
-        "",
-        *([f"- {n}" for n in notes] or ["None."]),
-        "",
-        "## C5: availability in gssrdoc vs the data",
-        "",
-        *([f"- {n}" for n in c5] or ["No differences."]),
-        "",
     ]
+    for release, (records, notes, c5) in by_release.items():
+        n_missing = collections.Counter(v["code"] for r in records for v in r.get("values", [])
+                                        if v["kind"] == "missing")
+        lines += [
+            f"## Release {release}",
+            "",
+            f"- Variables: {len(records)}",
+            f"- With question text: {sum('questions' in r for r in records)}",
+            f"- With a stem/item split: {sum(any('stem' in q for q in r.get('questions', [])) for r in records)}",
+            "",
+            "### Missing codes that occur, by number of variables",
+            "",
+            "| Code | Variables |",
+            "|---|---|",
+            *[f"| `{c}` | {k} |" for c, k in sorted(n_missing.items())],
+            "",
+            "### Values and labels to look at",
+            "",
+            *([f"- {n}" for n in notes] or ["None."]),
+            "",
+            f"### C5: availability in gssrdoc vs the {release} data",
+            "",
+            *([f"- {n}" for n in c5] or ["No differences."]),
+            "",
+        ]
     (ROOT / "build" / "report.md").write_text("\n".join(lines))
 
 

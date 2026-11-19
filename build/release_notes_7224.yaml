@@ -312,9 +312,7 @@ entries:
   variables: [RADIOACT]
   issue: This variable was assigned an incorrect variable label inconsistent with the content.
   fix: Corrected
-  # A corrected variable label is a documentation change; no §5.2 relation
-  # describes it, so the link says only same_item and the note carries the fix.
-  links: [{each: [same_item]}]
+  links: [{each: [same_item, labels_changed]}]
 
 - release: 7224r3
   page: 7
@@ -324,7 +322,7 @@ entries:
     This variable was assigned an incorrect set of response labels inconsistent with
     the question.
   fix: Corrected
-  links: [{each: [same_item, codes_changed]}]
+  links: [{each: [same_item, labels_changed]}]
 
 # --- Release 2 (pages 8-12) ---------------------------------------------------
 
@@ -725,7 +723,7 @@ entries:
     leave they felt a new parent should get. Unfortunately, the old value label for
     response 2 was retained from the old version of PAIDLV.
   fix: Updated
-  links: [{each: [same_item, codes_changed]}]
+  links: [{each: [same_item, labels_changed]}]
 
 - release: 7224r1
   page: 15

@@ -1,30 +1,30 @@
 sources:
-  - id: gssrdoc-json
-    title: gssrdoc gss_doc table, converted to JSON (gssrdoc_full.json)
+  - id: gssrdoc
+    title: gssrdoc's gss_doc table (GSS Data Explorer documentation), version 0.9
     kind: upstream_package
-    format: json
-    url: https://github.com/kjhealy/gssrdoc
-    path: data/raw/gssrdoc_full.json
-    releases: [7224r3a]
+    format: rda
+    url: https://raw.githubusercontent.com/kjhealy/gssrdoc/112286deecd7e11b605afda8734ac1c08304726c/data/gss_doc.rda
+    path: data/raw/gssrdoc-0.9/gss_doc.rda
+    releases: [7224r3, 7224r3a]
+    version: "0.9 (commit 112286deecd7e11b605afda8734ac1c08304726c, 2026-03-12)"
     redistribution: ship
     acquisition: manual
     manual_steps: >
-      Install gssrdoc, then run codebook/convert_gssrdoc_to_json.R from the
-      CultureWar repo (https://github.com/AllenDowney/CultureWar), which writes
-      extracted/gssrdoc_full.json. To be replaced by a pinned conversion in
-      build/.
-    fetched_on: "2026-02-07"
-    sha256: 93bc1791b1325cbc9a18dae8fca94df41cf29c772371b3db9a21447b826e6fe0
-    bytes: 21348980
-    version: "0.8.2 (commit 26faf3f, 2025-10-28)"
+      Run `make gssrdoc` (needs curl and an Rscript with jsonlite, e.g. the
+      pdt-xlang conda env: make gssrdoc RSCRIPT=.../envs/pdt-xlang/bin/Rscript).
+      It downloads the file at the pinned commit, checks its SHA-256, and
+      converts it with build/convert_gssrdoc.R to data/interim/gssrdoc-0.9.json.
+    fetched_on: "2026-11-19"
+    sha256: 2e55bf5640ca8f291332c4d6a0485f4cecdbe9d64164baa6e2da7e87bb4661fe
+    bytes: 825552
     note: >
-      gssrdoc scrapes GSS Data Explorer. This file was converted from gssrdoc
-      0.8.2, commit 26faf3f ("Update for 1972-2024 R2 documentation"), the only
-      commit to data/gss_doc.rda between 2025-10-28 and the 2026-02-07 fetch.
-      It documents Release 2, not 3a: its 6,904 names are exactly those of the
-      R2 Stata file, and its 2024 counts match R2 (racopen 462, grass 867).
-      Found in PublicDataToolkit Task 21. gssrdoc 0.9 (commit 112286d,
-      2026-03-12) documents Release 3; no version documents 3a yet.
+      gssrdoc scrapes GSS Data Explorer. Commit 112286d ("1972-2024 R3") is the
+      last change to data/gss_doc.rda: its 6,942 names are exactly those of the
+      R3 Stata file, so it documents Release 3. No gssrdoc version documents
+      Release 3a yet; 7224r3a records use this one and say so in provenance.
+      Pinned on Allen Downey's decision of 2026-11-19 (PublicDataToolkit plan
+      §10 item 3). Replaced gssrdoc 0.8.2 (commit 26faf3f, Release 2
+      documentation), used until then via CultureWar's gssrdoc_full.json.
   - id: gss-stata-7224r3a
     title: GSS 1972-2024 cumulative file, Stata, Release 3a
     kind: data

@@ -47,4 +47,8 @@ releases:
   - id: 7224r3a
     label: GSS 1972-2024 Cross-Sectional Cumulative Data, Release 3a
     status: current
-    sources: [gssrdoc-json, gss-stata-7224r3a]
+    sources: [gssrdoc, gss-stata-7224r3a]
+  - id: 7224r3
+    label: GSS 1972-2024 Cross-Sectional Cumulative Data, Release 3
+    status: superseded
+    sources: [gssrdoc, gss-stata-7224r3]

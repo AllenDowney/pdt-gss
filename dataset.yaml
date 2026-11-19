@@ -1,6 +1,7 @@
 standard_version: "0.1"
 id: gss
 title: General Social Survey
+kind: survey   # STANDARD.md §2.1: survey, administrative or portal
 publisher:
   name: NORC at the University of Chicago
   url: https://www.norc.org/

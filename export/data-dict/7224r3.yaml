@@ -19,6 +19,8 @@ details: |
 origin: ../../build
 tables:
 - name: gss
+  source:
+    parquet: ../../data/processed/gss-7224r3.parquet
   columns:
   - name: _row
     label: Row number

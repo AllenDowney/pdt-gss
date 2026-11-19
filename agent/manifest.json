@@ -123,12 +123,12 @@
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Abortion",
-   "basis": "members of group subject-abortion (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Abortion",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-abortion"
+    "subject": "Abortion"
    },
    "releases": [
     "7224r3a"
@@ -139,26 +139,26 @@
    "count": 7,
    "files": [
     {
-     "path": "shards/group/subject-abortion.jsonl",
+     "path": "shards/subject/abortion.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 8391
+     "tokens": 8387
     },
     {
-     "path": "shards/group/subject-abortion.txt",
+     "path": "shards/subject/abortion.txt",
      "form": "txt",
      "variables": 7,
-     "tokens": 464
+     "tokens": 460
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Age",
-   "basis": "members of group subject-age (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Age",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-age"
+    "subject": "Age"
    },
    "releases": [
     "7224r3a"
@@ -169,26 +169,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-age.jsonl",
+     "path": "shards/subject/age.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1280
+     "tokens": 1277
     },
     {
-     "path": "shards/group/subject-age.txt",
+     "path": "shards/subject/age.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 123
+     "tokens": 119
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Aged",
-   "basis": "members of group subject-aged (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Aged",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-aged"
+    "subject": "Aged"
    },
    "releases": [
     "7224r3a"
@@ -199,26 +199,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-aged.jsonl",
+     "path": "shards/subject/aged.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1527
+     "tokens": 1524
     },
     {
-     "path": "shards/group/subject-aged.txt",
+     "path": "shards/subject/aged.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 139
+     "tokens": 136
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Capital Punishment",
-   "basis": "members of group subject-capital-punishment (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Capital Punishment",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-capital-punishment"
+    "subject": "Capital Punishment"
    },
    "releases": [
     "7224r3a"
@@ -229,26 +229,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-capital-punishment.jsonl",
+     "path": "shards/subject/capital-punishment.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1318
+     "tokens": 1311
     },
     {
-     "path": "shards/group/subject-capital-punishment.txt",
+     "path": "shards/subject/capital-punishment.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 153
+     "tokens": 146
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Crime",
-   "basis": "members of group subject-crime (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Crime",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-crime"
+    "subject": "Crime"
    },
    "releases": [
     "7224r3a"
@@ -259,26 +259,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-crime.jsonl",
+     "path": "shards/subject/crime.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1598
+     "tokens": 1595
     },
     {
-     "path": "shards/group/subject-crime.txt",
+     "path": "shards/subject/crime.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 147
+     "tokens": 143
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Date Of Interview",
-   "basis": "members of group subject-date-of-interview (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Date Of Interview",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-date-of-interview"
+    "subject": "Date Of Interview"
    },
    "releases": [
     "7224r3a"
@@ -289,26 +289,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-date-of-interview.jsonl",
+     "path": "shards/subject/date-of-interview.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 759
+     "tokens": 753
     },
     {
-     "path": "shards/group/subject-date-of-interview.txt",
+     "path": "shards/subject/date-of-interview.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 130
+     "tokens": 124
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Drug Use And Addiction",
-   "basis": "members of group subject-drug-use-and-addiction (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Drug Use And Addiction",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-drug-use-and-addiction"
+    "subject": "Drug Use And Addiction"
    },
    "releases": [
     "7224r3a"
@@ -319,26 +319,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-drug-use-and-addiction.jsonl",
+     "path": "shards/subject/drug-use-and-addiction.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1614
+     "tokens": 1607
     },
     {
-     "path": "shards/group/subject-drug-use-and-addiction.txt",
+     "path": "shards/subject/drug-use-and-addiction.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 159
+     "tokens": 151
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Education",
-   "basis": "members of group subject-education (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Education",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-education"
+    "subject": "Education"
    },
    "releases": [
     "7224r3a"
@@ -349,26 +349,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-education.jsonl",
+     "path": "shards/subject/education.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1609
+     "tokens": 1604
     },
     {
-     "path": "shards/group/subject-education.txt",
+     "path": "shards/subject/education.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 154
+     "tokens": 149
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Environment",
-   "basis": "members of group subject-environment (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Environment",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-environment"
+    "subject": "Environment"
    },
    "releases": [
     "7224r3a"
@@ -379,26 +379,26 @@
    "count": 2,
    "files": [
     {
-     "path": "shards/group/subject-environment.jsonl",
+     "path": "shards/subject/environment.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 2737
+     "tokens": 2733
     },
     {
-     "path": "shards/group/subject-environment.txt",
+     "path": "shards/subject/environment.txt",
      "form": "txt",
      "variables": 2,
-     "tokens": 204
+     "tokens": 198
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Federal Government",
-   "basis": "members of group subject-federal-government (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Federal Government",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-federal-government"
+    "subject": "Federal Government"
    },
    "releases": [
     "7224r3a"
@@ -409,32 +409,32 @@
    "count": 19,
    "files": [
     {
-     "path": "shards/group/subject-federal-government.part1.jsonl",
+     "path": "shards/subject/federal-government.part1.jsonl",
      "form": "jsonl",
      "variables": 13,
-     "tokens": 19464
+     "tokens": 19457
     },
     {
-     "path": "shards/group/subject-federal-government.part2.jsonl",
+     "path": "shards/subject/federal-government.part2.jsonl",
      "form": "jsonl",
      "variables": 6,
-     "tokens": 8340
+     "tokens": 8333
     },
     {
-     "path": "shards/group/subject-federal-government.txt",
+     "path": "shards/subject/federal-government.txt",
      "form": "txt",
      "variables": 19,
-     "tokens": 914
+     "tokens": 907
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Gays And Lesbians",
-   "basis": "members of group subject-gays-and-lesbians (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Gays And Lesbians",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-gays-and-lesbians"
+    "subject": "Gays And Lesbians"
    },
    "releases": [
     "7224r3a"
@@ -445,26 +445,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-gays-and-lesbians.jsonl",
+     "path": "shards/subject/gays-and-lesbians.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1220
+     "tokens": 1214
     },
     {
-     "path": "shards/group/subject-gays-and-lesbians.txt",
+     "path": "shards/subject/gays-and-lesbians.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 179
+     "tokens": 173
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Guns",
-   "basis": "members of group subject-guns (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Guns",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-guns"
+    "subject": "Guns"
    },
    "releases": [
     "7224r3a"
@@ -475,26 +475,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-guns.jsonl",
+     "path": "shards/subject/guns.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1168
+     "tokens": 1165
     },
     {
-     "path": "shards/group/subject-guns.txt",
+     "path": "shards/subject/guns.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 158
+     "tokens": 155
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Interview",
-   "basis": "members of group subject-interview (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Interview",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-interview"
+    "subject": "Interview"
    },
    "releases": [
     "7224r3a"
@@ -505,26 +505,26 @@
    "count": 3,
    "files": [
     {
-     "path": "shards/group/subject-interview.jsonl",
+     "path": "shards/subject/interview.jsonl",
      "form": "jsonl",
      "variables": 3,
-     "tokens": 2263
+     "tokens": 2258
     },
     {
-     "path": "shards/group/subject-interview.txt",
+     "path": "shards/subject/interview.txt",
      "form": "txt",
      "variables": 3,
-     "tokens": 174
+     "tokens": 169
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Marijuana",
-   "basis": "members of group subject-marijuana (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Marijuana",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-marijuana"
+    "subject": "Marijuana"
    },
    "releases": [
     "7224r3a"
@@ -535,26 +535,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-marijuana.jsonl",
+     "path": "shards/subject/marijuana.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1132
+     "tokens": 1127
     },
     {
-     "path": "shards/group/subject-marijuana.txt",
+     "path": "shards/subject/marijuana.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 151
+     "tokens": 146
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Political",
-   "basis": "members of group subject-political (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Political",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-political"
+    "subject": "Political"
    },
    "releases": [
     "7224r3a"
@@ -565,26 +565,26 @@
    "count": 2,
    "files": [
     {
-     "path": "shards/group/subject-political.jsonl",
+     "path": "shards/subject/political.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 2659
+     "tokens": 2655
     },
     {
-     "path": "shards/group/subject-political.txt",
+     "path": "shards/subject/political.txt",
      "form": "txt",
      "variables": 2,
-     "tokens": 223
+     "tokens": 219
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Race",
-   "basis": "members of group subject-race (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Race",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-race"
+    "subject": "Race"
    },
    "releases": [
     "7224r3a"
@@ -595,26 +595,26 @@
    "count": 5,
    "files": [
     {
-     "path": "shards/group/subject-race.jsonl",
+     "path": "shards/subject/race.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 4833
+     "tokens": 4830
     },
     {
-     "path": "shards/group/subject-race.txt",
+     "path": "shards/subject/race.txt",
      "form": "txt",
      "variables": 5,
-     "tokens": 421
+     "tokens": 418
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Rape",
-   "basis": "members of group subject-rape (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Rape",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-rape"
+    "subject": "Rape"
    },
    "releases": [
     "7224r3a"
@@ -625,26 +625,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-rape.jsonl",
+     "path": "shards/subject/rape.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 1282
+     "tokens": 1279
     },
     {
-     "path": "shards/group/subject-rape.txt",
+     "path": "shards/subject/rape.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 150
+     "tokens": 147
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Religion",
-   "basis": "members of group subject-religion (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Religion",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-religion"
+    "subject": "Religion"
    },
    "releases": [
     "7224r3a"
@@ -655,26 +655,26 @@
    "count": 5,
    "files": [
     {
-     "path": "shards/group/subject-religion.jsonl",
+     "path": "shards/subject/religion.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 6354
+     "tokens": 6350
     },
     {
-     "path": "shards/group/subject-religion.txt",
+     "path": "shards/subject/religion.txt",
      "form": "txt",
      "variables": 5,
-     "tokens": 346
+     "tokens": 342
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Sample",
-   "basis": "members of group subject-sample (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Sample",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-sample"
+    "subject": "Sample"
    },
    "releases": [
     "7224r3a"
@@ -685,26 +685,26 @@
    "count": 1,
    "files": [
     {
-     "path": "shards/group/subject-sample.jsonl",
+     "path": "shards/subject/sample.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 738
+     "tokens": 735
     },
     {
-     "path": "shards/group/subject-sample.txt",
+     "path": "shards/subject/sample.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 123
+     "tokens": 119
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Sex",
-   "basis": "members of group subject-sex (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Sex",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-sex"
+    "subject": "Sex"
    },
    "releases": [
     "7224r3a"
@@ -715,26 +715,26 @@
    "count": 2,
    "files": [
     {
-     "path": "shards/group/subject-sex.jsonl",
+     "path": "shards/subject/sex.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 2422
+     "tokens": 2419
     },
     {
-     "path": "shards/group/subject-sex.txt",
+     "path": "shards/subject/sex.txt",
      "form": "txt",
      "variables": 2,
-     "tokens": 190
+     "tokens": 186
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Spending",
-   "basis": "members of group subject-spending (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Spending",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-spending"
+    "subject": "Spending"
    },
    "releases": [
     "7224r3a"
@@ -745,32 +745,32 @@
    "count": 19,
    "files": [
     {
-     "path": "shards/group/subject-spending.part1.jsonl",
+     "path": "shards/subject/spending.part1.jsonl",
      "form": "jsonl",
      "variables": 13,
-     "tokens": 19456
+     "tokens": 19452
     },
     {
-     "path": "shards/group/subject-spending.part2.jsonl",
+     "path": "shards/subject/spending.part2.jsonl",
      "form": "jsonl",
      "variables": 6,
-     "tokens": 8332
+     "tokens": 8328
     },
     {
-     "path": "shards/group/subject-spending.txt",
+     "path": "shards/subject/spending.txt",
      "form": "txt",
      "variables": 19,
-     "tokens": 906
+     "tokens": 902
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: Split Ballots",
-   "basis": "members of group subject-split-ballots (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: Split Ballots",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-split-ballots"
+    "subject": "Split Ballots"
    },
    "releases": [
     "7224r3a"
@@ -781,38 +781,38 @@
    "count": 30,
    "files": [
     {
-     "path": "shards/group/subject-split-ballots.part1.jsonl",
+     "path": "shards/subject/split-ballots.part1.jsonl",
      "form": "jsonl",
      "variables": 14,
-     "tokens": 18922
+     "tokens": 18917
     },
     {
-     "path": "shards/group/subject-split-ballots.part2.jsonl",
+     "path": "shards/subject/split-ballots.part2.jsonl",
      "form": "jsonl",
      "variables": 14,
-     "tokens": 19322
+     "tokens": 19316
     },
     {
-     "path": "shards/group/subject-split-ballots.part3.jsonl",
+     "path": "shards/subject/split-ballots.part3.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 2683
+     "tokens": 2678
     },
     {
-     "path": "shards/group/subject-split-ballots.txt",
+     "path": "shards/subject/split-ballots.txt",
      "form": "txt",
      "variables": 30,
-     "tokens": 1502
+     "tokens": 1496
     }
    ]
   },
   {
-   "kind": "group",
-   "title": "subject: United States",
-   "basis": "members of group subject-united-states (origin upstream_package)",
+   "kind": "subject",
+   "title": "Subject: United States",
+   "basis": "the publisher's subject list, from gssrdoc-json",
    "completeness": "complete",
    "filter": {
-    "group": "subject-united-states"
+    "subject": "United States"
    },
    "releases": [
     "7224r3a"
@@ -823,22 +823,22 @@
    "count": 20,
    "files": [
     {
-     "path": "shards/group/subject-united-states.part1.jsonl",
+     "path": "shards/subject/united-states.part1.jsonl",
      "form": "jsonl",
      "variables": 13,
-     "tokens": 19460
+     "tokens": 19455
     },
     {
-     "path": "shards/group/subject-united-states.part2.jsonl",
+     "path": "shards/subject/united-states.part2.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 9462
+     "tokens": 9457
     },
     {
-     "path": "shards/group/subject-united-states.txt",
+     "path": "shards/subject/united-states.txt",
      "form": "txt",
      "variables": 20,
-     "tokens": 957
+     "tokens": 952
     }
    ]
   },

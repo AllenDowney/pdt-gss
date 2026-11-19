@@ -46,29 +46,6 @@ Read `SKILL.md` before answering a question from these files.
 |---|---|---|---|---|
 | [battery: battery-natspac](shards/group/battery-natspac.txt) | 18 | `complete_by_rule` | 876 / 26,133 (1 / 2 parts) | members of group battery-natspac (origin rule) |
 | [battery: battery-abdefect](shards/group/battery-abdefect.txt) | 7 | `complete_by_rule` | 475 / 8,400 | members of group battery-abdefect (origin rule) |
-| [subject: Abortion](shards/group/subject-abortion.txt) | 7 | `complete` | 464 / 8,391 | members of group subject-abortion (origin upstream_package) |
-| [subject: Age](shards/group/subject-age.txt) | 1 | `complete` | 123 / 1,280 | members of group subject-age (origin upstream_package) |
-| [subject: Aged](shards/group/subject-aged.txt) | 1 | `complete` | 139 / 1,527 | members of group subject-aged (origin upstream_package) |
-| [subject: Capital Punishment](shards/group/subject-capital-punishment.txt) | 1 | `complete` | 153 / 1,318 | members of group subject-capital-punishment (origin upstream_package) |
-| [subject: Crime](shards/group/subject-crime.txt) | 1 | `complete` | 147 / 1,598 | members of group subject-crime (origin upstream_package) |
-| [subject: Date Of Interview](shards/group/subject-date-of-interview.txt) | 1 | `complete` | 130 / 759 | members of group subject-date-of-interview (origin upstream_package) |
-| [subject: Drug Use And Addiction](shards/group/subject-drug-use-and-addiction.txt) | 1 | `complete` | 159 / 1,614 | members of group subject-drug-use-and-addiction (origin upstream_package) |
-| [subject: Education](shards/group/subject-education.txt) | 1 | `complete` | 154 / 1,609 | members of group subject-education (origin upstream_package) |
-| [subject: Environment](shards/group/subject-environment.txt) | 2 | `complete` | 204 / 2,737 | members of group subject-environment (origin upstream_package) |
-| [subject: Federal Government](shards/group/subject-federal-government.txt) | 19 | `complete` | 914 / 27,804 (1 / 2 parts) | members of group subject-federal-government (origin upstream_package) |
-| [subject: Gays And Lesbians](shards/group/subject-gays-and-lesbians.txt) | 1 | `complete` | 179 / 1,220 | members of group subject-gays-and-lesbians (origin upstream_package) |
-| [subject: Guns](shards/group/subject-guns.txt) | 1 | `complete` | 158 / 1,168 | members of group subject-guns (origin upstream_package) |
-| [subject: Interview](shards/group/subject-interview.txt) | 3 | `complete` | 174 / 2,263 | members of group subject-interview (origin upstream_package) |
-| [subject: Marijuana](shards/group/subject-marijuana.txt) | 1 | `complete` | 151 / 1,132 | members of group subject-marijuana (origin upstream_package) |
-| [subject: Political](shards/group/subject-political.txt) | 2 | `complete` | 223 / 2,659 | members of group subject-political (origin upstream_package) |
-| [subject: Race](shards/group/subject-race.txt) | 5 | `complete` | 421 / 4,833 | members of group subject-race (origin upstream_package) |
-| [subject: Rape](shards/group/subject-rape.txt) | 1 | `complete` | 150 / 1,282 | members of group subject-rape (origin upstream_package) |
-| [subject: Religion](shards/group/subject-religion.txt) | 5 | `complete` | 346 / 6,354 | members of group subject-religion (origin upstream_package) |
-| [subject: Sample](shards/group/subject-sample.txt) | 1 | `complete` | 123 / 738 | members of group subject-sample (origin upstream_package) |
-| [subject: Sex](shards/group/subject-sex.txt) | 2 | `complete` | 190 / 2,422 | members of group subject-sex (origin upstream_package) |
-| [subject: Spending](shards/group/subject-spending.txt) | 19 | `complete` | 906 / 27,788 (1 / 2 parts) | members of group subject-spending (origin upstream_package) |
-| [subject: Split Ballots](shards/group/subject-split-ballots.txt) | 30 | `complete` | 1,502 / 40,927 (1 / 3 parts) | members of group subject-split-ballots (origin upstream_package) |
-| [subject: United States](shards/group/subject-united-states.txt) | 20 | `complete` | 957 / 28,922 (1 / 2 parts) | members of group subject-united-states (origin upstream_package) |
 
 ## By scale signature
 
@@ -76,3 +53,31 @@ Read `SKILL.md` before answering a question from these files.
 |---|---|---|---|---|
 | [Scale signature: spending_3](shards/scale/spending-3.txt) | 20 | `complete_by_rule` | 968 / 28,941 (1 / 2 parts) | variables with this scale signature |
 | [Scale signature: yes_no](shards/scale/yes-no.txt) | 7 | `complete_by_rule` | 477 / 8,402 | variables with this scale signature |
+
+## By publisher subject
+
+| Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
+|---|---|---|---|---|
+| [Subject: Abortion](shards/subject/abortion.txt) | 7 | `complete` | 460 / 8,387 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Age](shards/subject/age.txt) | 1 | `complete` | 119 / 1,277 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Aged](shards/subject/aged.txt) | 1 | `complete` | 136 / 1,524 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Capital Punishment](shards/subject/capital-punishment.txt) | 1 | `complete` | 146 / 1,311 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Crime](shards/subject/crime.txt) | 1 | `complete` | 143 / 1,595 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Date Of Interview](shards/subject/date-of-interview.txt) | 1 | `complete` | 124 / 753 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Drug Use And Addiction](shards/subject/drug-use-and-addiction.txt) | 1 | `complete` | 151 / 1,607 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Education](shards/subject/education.txt) | 1 | `complete` | 149 / 1,604 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Environment](shards/subject/environment.txt) | 2 | `complete` | 198 / 2,733 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Federal Government](shards/subject/federal-government.txt) | 19 | `complete` | 907 / 27,790 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |
+| [Subject: Gays And Lesbians](shards/subject/gays-and-lesbians.txt) | 1 | `complete` | 173 / 1,214 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Guns](shards/subject/guns.txt) | 1 | `complete` | 155 / 1,165 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Interview](shards/subject/interview.txt) | 3 | `complete` | 169 / 2,258 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Marijuana](shards/subject/marijuana.txt) | 1 | `complete` | 146 / 1,127 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Political](shards/subject/political.txt) | 2 | `complete` | 219 / 2,655 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Race](shards/subject/race.txt) | 5 | `complete` | 418 / 4,830 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Rape](shards/subject/rape.txt) | 1 | `complete` | 147 / 1,279 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Religion](shards/subject/religion.txt) | 5 | `complete` | 342 / 6,350 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Sample](shards/subject/sample.txt) | 1 | `complete` | 119 / 735 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Sex](shards/subject/sex.txt) | 2 | `complete` | 186 / 2,419 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Spending](shards/subject/spending.txt) | 19 | `complete` | 902 / 27,780 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |
+| [Subject: Split Ballots](shards/subject/split-ballots.txt) | 30 | `complete` | 1,496 / 40,911 (1 / 3 parts) | the publisher's subject list, from gssrdoc-json |
+| [Subject: United States](shards/subject/united-states.txt) | 20 | `complete` | 952 / 28,912 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |

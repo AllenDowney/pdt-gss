@@ -38,46 +38,46 @@ Read `SKILL.md` before answering a question from these files.
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [Release 7224r3a](shards/table/7224r3a.txt) | 50 | `complete` | 2,331 / 61,190 (1 / 4 parts) | every variable in the release |
+| [Release 7224r3a](shards/table/7224r3a.txt) | 50 | `complete` | 2,334 / 61,190 (1 / 4 parts) | every variable in the release |
 
 ## By group
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [battery: battery-natspac](shards/group/battery-natspac.txt) | 18 | `complete_by_rule` | 876 / 26,133 (1 / 2 parts) | members of group battery-natspac (origin rule) |
-| [battery: battery-abdefect](shards/group/battery-abdefect.txt) | 7 | `complete_by_rule` | 475 / 8,400 | members of group battery-abdefect (origin rule) |
+| [battery: battery-natspac](shards/group/battery-natspac.txt) | 18 | `complete_by_rule` | 879 / 26,133 (1 / 2 parts) | members of group battery-natspac (origin rule) |
+| [battery: battery-abdefect](shards/group/battery-abdefect.txt) | 7 | `complete_by_rule` | 478 / 8,400 | members of group battery-abdefect (origin rule) |
 
 ## By scale signature
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [Scale signature: spending_3](shards/scale/spending-3.txt) | 20 | `complete_by_rule` | 968 / 28,941 (1 / 2 parts) | variables with this scale signature |
-| [Scale signature: yes_no](shards/scale/yes-no.txt) | 7 | `complete_by_rule` | 477 / 8,402 | variables with this scale signature |
+| [Scale signature: spending_3](shards/scale/spending-3.txt) | 20 | `complete_by_rule` | 971 / 28,941 (1 / 2 parts) | variables with this scale signature |
+| [Scale signature: yes_no](shards/scale/yes-no.txt) | 7 | `complete_by_rule` | 480 / 8,402 | variables with this scale signature |
 
 ## By publisher subject
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [Subject: Abortion](shards/subject/abortion.txt) | 7 | `complete` | 460 / 8,387 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Age](shards/subject/age.txt) | 1 | `complete` | 119 / 1,277 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Aged](shards/subject/aged.txt) | 1 | `complete` | 136 / 1,524 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Capital Punishment](shards/subject/capital-punishment.txt) | 1 | `complete` | 146 / 1,311 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Crime](shards/subject/crime.txt) | 1 | `complete` | 143 / 1,595 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Date Of Interview](shards/subject/date-of-interview.txt) | 1 | `complete` | 124 / 753 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Drug Use And Addiction](shards/subject/drug-use-and-addiction.txt) | 1 | `complete` | 151 / 1,607 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Education](shards/subject/education.txt) | 1 | `complete` | 149 / 1,604 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Environment](shards/subject/environment.txt) | 2 | `complete` | 198 / 2,733 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Federal Government](shards/subject/federal-government.txt) | 19 | `complete` | 907 / 27,790 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |
-| [Subject: Gays And Lesbians](shards/subject/gays-and-lesbians.txt) | 1 | `complete` | 173 / 1,214 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Guns](shards/subject/guns.txt) | 1 | `complete` | 155 / 1,165 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Interview](shards/subject/interview.txt) | 3 | `complete` | 169 / 2,258 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Marijuana](shards/subject/marijuana.txt) | 1 | `complete` | 146 / 1,127 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Political](shards/subject/political.txt) | 2 | `complete` | 219 / 2,655 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Race](shards/subject/race.txt) | 5 | `complete` | 418 / 4,830 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Rape](shards/subject/rape.txt) | 1 | `complete` | 147 / 1,279 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Religion](shards/subject/religion.txt) | 5 | `complete` | 342 / 6,350 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Sample](shards/subject/sample.txt) | 1 | `complete` | 119 / 735 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Sex](shards/subject/sex.txt) | 2 | `complete` | 186 / 2,419 | the publisher's subject list, from gssrdoc-json |
-| [Subject: Spending](shards/subject/spending.txt) | 19 | `complete` | 902 / 27,780 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |
-| [Subject: Split Ballots](shards/subject/split-ballots.txt) | 30 | `complete` | 1,496 / 40,911 (1 / 3 parts) | the publisher's subject list, from gssrdoc-json |
-| [Subject: United States](shards/subject/united-states.txt) | 20 | `complete` | 952 / 28,912 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |
+| [Subject: Abortion](shards/subject/abortion.txt) | 7 | `complete` | 463 / 8,387 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Age](shards/subject/age.txt) | 1 | `complete` | 123 / 1,277 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Aged](shards/subject/aged.txt) | 1 | `complete` | 139 / 1,524 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Capital Punishment](shards/subject/capital-punishment.txt) | 1 | `complete` | 149 / 1,311 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Crime](shards/subject/crime.txt) | 1 | `complete` | 146 / 1,595 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Date Of Interview](shards/subject/date-of-interview.txt) | 1 | `complete` | 127 / 753 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Drug Use And Addiction](shards/subject/drug-use-and-addiction.txt) | 1 | `complete` | 154 / 1,607 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Education](shards/subject/education.txt) | 1 | `complete` | 153 / 1,604 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Environment](shards/subject/environment.txt) | 2 | `complete` | 202 / 2,733 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Federal Government](shards/subject/federal-government.txt) | 19 | `complete` | 910 / 27,790 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |
+| [Subject: Gays And Lesbians](shards/subject/gays-and-lesbians.txt) | 1 | `complete` | 176 / 1,214 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Guns](shards/subject/guns.txt) | 1 | `complete` | 158 / 1,165 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Interview](shards/subject/interview.txt) | 3 | `complete` | 172 / 2,258 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Marijuana](shards/subject/marijuana.txt) | 1 | `complete` | 150 / 1,127 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Political](shards/subject/political.txt) | 2 | `complete` | 222 / 2,655 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Race](shards/subject/race.txt) | 5 | `complete` | 421 / 4,830 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Rape](shards/subject/rape.txt) | 1 | `complete` | 150 / 1,279 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Religion](shards/subject/religion.txt) | 5 | `complete` | 345 / 6,350 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Sample](shards/subject/sample.txt) | 1 | `complete` | 123 / 735 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Sex](shards/subject/sex.txt) | 2 | `complete` | 190 / 2,419 | the publisher's subject list, from gssrdoc-json |
+| [Subject: Spending](shards/subject/spending.txt) | 19 | `complete` | 905 / 27,780 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |
+| [Subject: Split Ballots](shards/subject/split-ballots.txt) | 30 | `complete` | 1,499 / 40,911 (1 / 3 parts) | the publisher's subject list, from gssrdoc-json |
+| [Subject: United States](shards/subject/united-states.txt) | 20 | `complete` | 955 / 28,912 (1 / 2 parts) | the publisher's subject list, from gssrdoc-json |

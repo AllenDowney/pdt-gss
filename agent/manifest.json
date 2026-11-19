@@ -48,7 +48,7 @@
      "path": "shards/table/7224r3a.txt",
      "form": "txt",
      "variables": 50,
-     "tokens": 2331
+     "tokens": 2334
     }
    ]
   },
@@ -86,7 +86,7 @@
      "path": "shards/group/battery-natspac.txt",
      "form": "txt",
      "variables": 18,
-     "tokens": 876
+     "tokens": 879
     }
    ]
   },
@@ -118,7 +118,7 @@
      "path": "shards/group/battery-abdefect.txt",
      "form": "txt",
      "variables": 7,
-     "tokens": 475
+     "tokens": 478
     }
    ]
   },
@@ -148,7 +148,7 @@
      "path": "shards/subject/abortion.txt",
      "form": "txt",
      "variables": 7,
-     "tokens": 460
+     "tokens": 463
     }
    ]
   },
@@ -178,7 +178,7 @@
      "path": "shards/subject/age.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 119
+     "tokens": 123
     }
    ]
   },
@@ -208,7 +208,7 @@
      "path": "shards/subject/aged.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 136
+     "tokens": 139
     }
    ]
   },
@@ -238,7 +238,7 @@
      "path": "shards/subject/capital-punishment.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 146
+     "tokens": 149
     }
    ]
   },
@@ -268,7 +268,7 @@
      "path": "shards/subject/crime.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 143
+     "tokens": 146
     }
    ]
   },
@@ -298,7 +298,7 @@
      "path": "shards/subject/date-of-interview.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 124
+     "tokens": 127
     }
    ]
   },
@@ -328,7 +328,7 @@
      "path": "shards/subject/drug-use-and-addiction.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 151
+     "tokens": 154
     }
    ]
   },
@@ -358,7 +358,7 @@
      "path": "shards/subject/education.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 149
+     "tokens": 153
     }
    ]
   },
@@ -388,7 +388,7 @@
      "path": "shards/subject/environment.txt",
      "form": "txt",
      "variables": 2,
-     "tokens": 198
+     "tokens": 202
     }
    ]
   },
@@ -424,7 +424,7 @@
      "path": "shards/subject/federal-government.txt",
      "form": "txt",
      "variables": 19,
-     "tokens": 907
+     "tokens": 910
     }
    ]
   },
@@ -454,7 +454,7 @@
      "path": "shards/subject/gays-and-lesbians.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 173
+     "tokens": 176
     }
    ]
   },
@@ -484,7 +484,7 @@
      "path": "shards/subject/guns.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 155
+     "tokens": 158
     }
    ]
   },
@@ -514,7 +514,7 @@
      "path": "shards/subject/interview.txt",
      "form": "txt",
      "variables": 3,
-     "tokens": 169
+     "tokens": 172
     }
    ]
   },
@@ -544,7 +544,7 @@
      "path": "shards/subject/marijuana.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 146
+     "tokens": 150
     }
    ]
   },
@@ -574,7 +574,7 @@
      "path": "shards/subject/political.txt",
      "form": "txt",
      "variables": 2,
-     "tokens": 219
+     "tokens": 222
     }
    ]
   },
@@ -604,7 +604,7 @@
      "path": "shards/subject/race.txt",
      "form": "txt",
      "variables": 5,
-     "tokens": 418
+     "tokens": 421
     }
    ]
   },
@@ -634,7 +634,7 @@
      "path": "shards/subject/rape.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 147
+     "tokens": 150
     }
    ]
   },
@@ -664,7 +664,7 @@
      "path": "shards/subject/religion.txt",
      "form": "txt",
      "variables": 5,
-     "tokens": 342
+     "tokens": 345
     }
    ]
   },
@@ -694,7 +694,7 @@
      "path": "shards/subject/sample.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 119
+     "tokens": 123
     }
    ]
   },
@@ -724,7 +724,7 @@
      "path": "shards/subject/sex.txt",
      "form": "txt",
      "variables": 2,
-     "tokens": 186
+     "tokens": 190
     }
    ]
   },
@@ -760,7 +760,7 @@
      "path": "shards/subject/spending.txt",
      "form": "txt",
      "variables": 19,
-     "tokens": 902
+     "tokens": 905
     }
    ]
   },
@@ -802,7 +802,7 @@
      "path": "shards/subject/split-ballots.txt",
      "form": "txt",
      "variables": 30,
-     "tokens": 1496
+     "tokens": 1499
     }
    ]
   },
@@ -838,7 +838,7 @@
      "path": "shards/subject/united-states.txt",
      "form": "txt",
      "variables": 20,
-     "tokens": 952
+     "tokens": 955
     }
    ]
   },
@@ -878,7 +878,7 @@
      "path": "shards/scale/spending-3.txt",
      "form": "txt",
      "variables": 20,
-     "tokens": 968
+     "tokens": 971
     }
    ]
   },
@@ -912,7 +912,7 @@
      "path": "shards/scale/yes-no.txt",
      "form": "txt",
      "variables": 7,
-     "tokens": 477
+     "tokens": 480
     }
    ]
   }

@@ -29,7 +29,7 @@ build: $(GSSRDOC_JSON)
 	$(PYTHON) build/build_slice.py
 	$(PYTHON) build/build_links.py
 
-## Generate agent/ and docs/ from the records (pdt views)
+## Generate agent/, docs/ and export/ from the records (pdt views)
 views:
 	PYTHONPATH=$(PDT)/lib $(PYTHON) -m pdt views .
 

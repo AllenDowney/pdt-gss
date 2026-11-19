@@ -4,9 +4,10 @@ PDT ?= ../PublicDataToolkit
 
 .PHONY: build views check
 
-## Build metadata records from data/raw (see build/build_slice.py)
+## Build metadata records and links from data/raw (build/build_slice.py, build/build_links.py)
 build:
 	$(PYTHON) build/build_slice.py
+	$(PYTHON) build/build_links.py
 
 ## Generate agent/ and docs/ from the records (pdt views)
 views:

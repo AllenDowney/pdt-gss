@@ -1,0 +1,752 @@
+# NORC's "Release Notes for GSS 1972-2024 Release 3a" (July 2026), transcribed by
+# hand. That PDF repeats the notes for Releases 3, 2 and 1, so one source covers
+# all four. build/build_links.py turns these entries into metadata/links.jsonl.
+#
+# What is transcribed (origin: publisher, source below, page = the PDF's page):
+#   years, variables (as printed, upper case, ranges like INTRACE1-INTRACE3 kept),
+#   issue and fix (verbatim, with line breaks from page width removed).
+# What is ours (origin: hand, recorded in each link's note):
+#   `links`, the reading of each entry as STANDARD.md §5.2 relations.
+#
+# links: a list of
+#   - each: [relations]            every listed variable, same name, previous release -> this release
+#   - pairs: [[from, to], ...]     names (lower case); from in `from_release`, to in `to_release`
+#     relations: [...]             (both default: previous release -> this release)
+# An entry with no `links` asserts nothing we can model; `why` says why.
+
+source: gss-release-notes-7224r3a
+author: Allen Downey
+transcribed_on: "2026-11-19"
+
+# Names printed wrong in the notes, kept as printed in `variables` and mapped here
+# when links are built (origin: hand; checked against the R2, R3 and R3a Stata files).
+name_fixes:
+  DSDNTPAY:
+    name: DSNDNTPAY
+    note: >-
+      Release 2 notes (p. 10) print DSDNTPAY; the data files of R2, R3 and R3a have
+      dsndntpay, "Reparations for descendants of slaves", and no dsdntpay.
+
+releases:
+  7224r3a: {label: Release 3a, date: "2026-07", previous: 7224r3}
+  7224r3:  {label: Release 3,  date: "2026-03", previous: 7224r2}
+  7224r2:  {label: Release 2,  date: "2025-10", previous: 7224r1}
+  7224r1:  {label: Release 1,  date: "2025-05", previous: null,
+            note: "Its previous release is a 1972-2022 cumulative file; the notes don't name which release of it."}
+
+entries:
+
+# --- Release 3a (pages 1-2) ---------------------------------------------------
+
+- release: 7224r3a
+  page: 1
+  years: [2024]
+  variables: [DWELLPRE, USCITZNV, USCITZNNV]
+  issue: >-
+    Due to recent disclosure review and limitation decisions, these variables have
+    been denoted as .x "Not available in this release" but should be denoted as .y
+    "Not available in this year."
+  fix: Recoded to .y "Not available in this year"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3a
+  page: 1
+  years: [2024]
+  variables: [RACOPEN, RACOPENV]
+  issue: >-
+    For the R3 release of the 2024 data, a correction was intended for RACOPENV for
+    2024 related to RACOPENY. Unfortunately, the data for RACOPEN and RACOPENV was
+    inadvertently removed as a part of that intended correction.
+  fix: Included
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3a
+  page: 1
+  years: [2024]
+  variables: [RVISITOR]
+  issue: Variable not previously released
+  fix: Included
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3a
+  page: 1
+  years: [2021]
+  variables: [INTID, INTETHN, INTHISP, INTRACE1-INTRACE3, INTSEX]
+  issue: >-
+    While the GSS team had hoped to provide telephone interviewer characteristics
+    for 2021, these data were ultimately not able to be obtained. These variables
+    have been denoted as .x "Not available in this release" but should be denoted
+    as .y "Not available in this year."
+  fix: Recoded to .y "Not available in this year"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3a
+  page: 1
+  years: [2021]
+  variables: [SPPRES80]
+  issue: >-
+    This variable has not been produced since 2010 and was not intended for release
+    in 2021. These variables should be denoted as .y "Not available in this year."
+  fix: Recoded to .y "Not available in this year"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3a
+  page: 1
+  years: [2021]
+  variables: [STRVBIAS, STRVBIASY]
+  issue: >-
+    In 2021, a question wording experiment (assigned by FORM) was conducted on the
+    variable STRVBIAS to ensure the response option order did not have an impact on
+    response distributions. The order was found to have no impact on response
+    distributions. Consistent with GSS policy for other variables where similar
+    experiments have been conducted (including the same experiment for the
+    2016-2020 GSS Panel), STRVBIASY should be integrated into STRVBIAS.
+  fix: STRVBIAS expanded, STRVBIASY removed
+  links:
+    - pairs: [[strvbias, strvbias]]
+      relations: [same_item, data_revised]
+    - pairs: [[strvbiasy, strvbias]]
+      relations: [merged_into]
+
+- release: 7224r3a
+  page: 1
+  years: [2021, 2022, 2024]
+  variables: [ISCO08, PAISCO08, MAISCO08, SPISCO08, COISCO08]
+  issue: Variables not previously released
+  fix: Included
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3a
+  page: 2
+  years: all
+  variables: [VOTE_TS, PRES_TS]
+  issue: >-
+    In the spirit of recent "time series" additions (i.e., suffix "TS") for the ANES
+    module, we have added two time series variables for our historical voting
+    (e.g., VOTE68, VOTE92, VOTE20) and presidential voting (e.g., PRES68, PRES92,
+    PRES20) questions. This variable summarizes the data from the most recent
+    election as some years asked about multiple elections. For example, for GSS
+    2024, VOTE_TS and PRES_TS include the voting data for the 2020 election as
+    respondents were asked about both the 2016 and 2020 elections.
+  fix: Included
+  # The 2024 codebook (R3a, p. 457) says "GSS variables VOTE68 through VOTE20 were
+  # combined to construct VOTE_TS" and the same for PRES_TS. The members of each
+  # range are the names in the R3a data file that match vote<yy> and pres<yy>.
+  links:
+    - from_release: 7224r3a
+      to_release: 7224r3a
+      pairs: [[vote_ts, vote68], [vote_ts, vote72], [vote_ts, vote76], [vote_ts, vote80],
+              [vote_ts, vote84], [vote_ts, vote88], [vote_ts, vote92], [vote_ts, vote96],
+              [vote_ts, vote00], [vote_ts, vote04], [vote_ts, vote08], [vote_ts, vote12],
+              [vote_ts, vote16], [vote_ts, vote20],
+              [pres_ts, pres68], [pres_ts, pres72], [pres_ts, pres76], [pres_ts, pres80],
+              [pres_ts, pres84], [pres_ts, pres88], [pres_ts, pres92], [pres_ts, pres96],
+              [pres_ts, pres00], [pres_ts, pres04], [pres_ts, pres08], [pres_ts, pres12],
+              [pres_ts, pres16], [pres_ts, pres20]]
+      relations: [derived_from]
+
+# --- Release 3 (pages 3-7) ----------------------------------------------------
+
+- release: 7224r3
+  page: 3
+  years: all
+  variables: [DWELLING, INTAGE, INTYRS]
+  issue: >-
+    The GSS team developed an updated plan for the 2024 data release to reduce
+    disclosure risks, especially for demographic and topic-sensitive variables. See
+    a fuller description in Release Notes for Release 1 and Release 2. For more
+    information about these changes, please see Appendix E in the GSS 2024 Codebook.
+  fix: >-
+    Updated response categories. Variables preserving the historical response
+    categories: DWELLING_8222, INTAGE_0418, INTYRS_0418
+  links:
+    - pairs: [[dwelling, dwelling], [intage, intage], [intyrs, intyrs]]
+      relations: [same_item, codes_changed]
+    - pairs: [[dwelling, dwelling_8222], [intage, intage_0418], [intyrs, intyrs_0418]]
+      relations: [same_item, renamed]
+
+- release: 7224r3
+  page: 3
+  years: [2024]
+  variables: [YEARSUSA, MNTHSUSA, MIGAGE, MIGHIST]
+  issue: >-
+    Related to disclosure risks (see above), it was determined that YEARSUSA and
+    MNTHSUSA should no longer be released as is in the public use datafile. In
+    response, the GSS team developed two summary measures based on this data
+    appropriate for public release. MIGAGE provides age categories for when the
+    respondent immigrated to the United States. MIGHIST provides the year range of
+    the respondent's immigration based on major periods of immigration in the U.S.
+    For more information, please see GSS Methodological Report 144.
+  fix: Included
+  links:
+    - from_release: 7224r3
+      to_release: 7224r3
+      pairs: [[migage, yearsusa], [migage, mnthsusa], [mighist, yearsusa], [mighist, mnthsusa]]
+      relations: [derived_from]
+    - pairs: [[yearsusa, yearsusa], [mnthsusa, mnthsusa]]
+      relations: [same_item, data_revised]
+
+- release: 7224r3
+  page: 3
+  years: [2024]
+  variables: [AMERSTATUS, BASELINESTATUS, WTSSNRPS_AS]
+  issue: >-
+    In addition to the nationally representative sample, the 2024 GSS Cross-section
+    includes an oversample of Black, Hispanic, and Asian American, Native Hawaiian,
+    and Pacific Islander (AANHPI) respondents, obtained from NORC's AmeriSpeak
+    Panel, which utilizes the same national sampling frame as the GSS. These
+    respondents were not eligible for follow-on GSS studies. AmeriSpeak Panel cases
+    were not included in previous releases. For more details, please see GSS
+    Methodological Report 148.
+  fix: >-
+    677 AmeriSpeak respondents are now included, increasing the final sample size
+    for 2024 to 3,986 respondents. AmeriSpeak cases are denoted by the indicator
+    AMERSTATUS. Baseline 2024 GSS cases are denoted by the indicator BASELINESTATUS.
+    AmeriSpeak cases are only available in the 2024 GSS single-year file, not the
+    1972-2024 cumulative file. The full 3,986 respondents should be analyzed with
+    the survey weight WTSSNRPS_AS.
+  why: These variables are in the 2024 single-year file only, not the cumulative file this repo covers.
+
+- release: 7224r3
+  page: 3-6
+  years: [2024]
+  variables: [INTID, INTAGE, INTETHN, INTSEX, INTYRS, COOP, COMPREND, HUCLEAN,
+              WHOELSE1-WHOELSE6, HLTHSTRT, KIDSINHH, RESPOND, INCUSPOP, NEISAFE,
+              RLOOKS, RGROOMED, RHLTHEND, FEEUSED, FEELEVEL, TOTALINCENTIVE,
+              LNGTHINV, CONSENT, ADMINCONSENT, BATCH, OVERSAMP, RELTRAD16, WORDSUM7,
+              WORDSUMOLD, WORDSUMNEW, ANESELIGIBLE, ANESPRE_STATUS, ANESPOST_STATUS,
+              NEXTELIGIBLE, NEXTSTATUS, WTSSNRPS_NEXT, DATEINTV_NEXT, CREDREP,
+              CREDCHOICE, CREDAM, CREDLAND, CREDEMP, CREDCAR, IMPFINAN, IMPMAR,
+              IMPKIDS, IMPGOD, IMPTHNGS, IMPCULTR, IMPJOB, IMPSELF, UNITED,
+              HAPPY_NEXT, HAPFEEL, ASHAMED, FEARFUL, ANGRY, PROUD, AIMOFART, ABMORAL,
+              ABHELP1-ABHELP4, GESTATE, NUMPETS, DOG, CAT, SMAMMAL, BIRD, FISH,
+              REPTILE, OTHPET, PETFAM, PETSSEQ, GRNCON, PERLA, PERLA_SELF,
+              CHLDIDEL_NEXT, CHLDPREF_NEXT, KNWSEXOR, NUMGIVEN, RACE1-RACE5,
+              SPOUSE1-SPOUSE5, PARENT1-PARENT5, CHILD1-CHILD5, OTHFAM1-OTHFAM5,
+              COWORK1-COWORK5, MEMGRP1-MEMGRP5, NEIGHBR1-NEIGHBR5, FRIEND1-FRIEND5,
+              ADVISOR1-ADVISOR5, OTHER1-OTHER5, TALKTO1-TALKTO5, TOPPROB1_NEXT,
+              TOPPROB2_HLTH, TOPPROB2_EDUC, TOPPROB2_CRIM, TOPPROB2_ENVR,
+              TOPPROB2_IMMG, TOPPROB2_ECON, TOPPROB2_TERR, TOPPROB2_POVT,
+              TOPPROB2_NONE, HHTYPE1_NEXT, FAMGEN_NEXT]
+  issue: >-
+    Variables not previously released addressing: Interviewer characteristics;
+    Interviewer observations; Interview length, incentives, and other paradata;
+    Respondent skin-tone (interviewer-observed and self-reported); WORDSUM variants;
+    ANES follow-on eligibility and participation; GSS Next Follow-on, with sections
+    on: Credit history, Importance of cultural values, Ideal number of children,
+    Expanded abortion items, Household pets, Social networks, Top problems in the US
+  fix: Included
+  # Names already in the R2 file get same_item + data_revised; names new in R3
+  # have no previous record to link to (build_links.py checks the R2 names).
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3
+  page: 6
+  years: [2024]
+  variables: [RACWORK]
+  issue: >-
+    The question RACWORK was removed from the 2024 questionnaire. There should have
+    been no valid or missing values.
+  fix: Recoded to .y "Not available in this year"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3
+  page: 6
+  years: [2022, 2024]
+  variables: [RACOPEN, RACOPENV]
+  issue: >-
+    In implementing the transition from RACOPENY to RACOPENV (see Release Notes for
+    Release 1 below), we did not appropriately move over in-person, phone, and
+    select multimode cases to RACOPEN.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3
+  page: 6
+  years: [2022, 2024]
+  variables: [AGED, AGEDV, AGEDNV, COURTS, COURTSV, COURTSNV, DISCAFFW, DISCAFFWV,
+              DISCAFFWNV, DIVLAW, DIVLAWV, DIVLAWNV, FAIR, FAIRV, FAIRNV, FEPOL,
+              FEPOLV, FEPOLNV, GRASS, GRASSV, GRASSNV, HELPFUL, HELPFULV, HELPFULNV,
+              KIDSSOL, KIDSSOLV, KIDSSOLNV, POSTLIFE, POSTLIFEV, POSTLIFENV, PRAYER,
+              PRAYERV, PRAYERNV, RELITEN, RELITENV, RELITENNV, TRUST, TRUSTV, TRUSTNV,
+              USWARY, USWARYV, USWARYNV]
+  issue: >-
+    Based on the mode of completion (variable: MODE), some cases were not
+    appropriately assigned to the correct experimental version of the variable
+    corresponding to the volunteered response experiment. Upon further
+    investigation, we discovered mode assignments needed to be adjusted for certain
+    variables, particularly for certain ballots. In addition, we discovered a
+    programming anomaly where a select number of web respondents assigned to the NV
+    condition (FORM=1) were able to return to a V/NV variable a second time and were
+    shown and able to select a volunteer response option not available to them by
+    the experimental design. It was determined that these cases should be recoded
+    to .n "No Answer" to preserve the experimental design.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3
+  page: 6-7
+  years: [2021, 2022]
+  variables: [MODE]
+  issue: >-
+    While investigating the volunteered response experiment discrepancies (see
+    above), we determined that 218 cases in 2021 and 19 cases in 2022 (237 total)
+    would be better classified as "Multimode." This change for 2021 makes it more
+    consistent with mode assignment in 2022 and 2024.
+  fix: Recoded to 3 "Multimode"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3
+  page: 7
+  years: [2022]
+  variables: [CONSENT]
+  issue: >-
+    While processing the 2024 GSS variable of CONSENT, an error was discovered in
+    the 2022 processing.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r3
+  page: 7
+  years: [2006-2018]
+  variables: [RADIOACT]
+  issue: This variable was assigned an incorrect variable label inconsistent with the content.
+  fix: Corrected
+  # A corrected variable label is a documentation change; no §5.2 relation
+  # describes it, so the link says only same_item and the note carries the fix.
+  links: [{each: [same_item]}]
+
+- release: 7224r3
+  page: 7
+  years: [1993]
+  variables: [IMPTHNGS]
+  issue: >-
+    This variable was assigned an incorrect set of response labels inconsistent with
+    the question.
+  fix: Corrected
+  links: [{each: [same_item, codes_changed]}]
+
+# --- Release 2 (pages 8-12) ---------------------------------------------------
+
+- release: 7224r2
+  page: 8
+  years: all
+  variables: [AGEKDBRN, BABIES, BABIES_EXP, CHILDSINHH, CHILDS_EXP, CODEN, DENOM,
+              DENOM16, DIPGED, FAMGEN, FAMGEN_EXP, HIVTEST1, HIVTEST2, HOMPOP,
+              HOMPOP_EXP, MAJOR1, MAJOR2, OTHLANG1, OTHLANG2, PARTNERS, PRETEEN,
+              PRETEEN_EXP, RACEACS14, REGION, REG16, RPLACE, SPDEN, TEENS, TEENS_EXP,
+              UNRELAT]
+  issue: >-
+    The GSS team developed an updated plan for the 2024 data release to reduce
+    disclosure risks, especially for demographic and topic-sensitive variables. The
+    GSS team has chosen to reduce the number of response categories reported for
+    select demographic variables. The default variable names (e.g., EARNRS,
+    HISPANIC) will have the reduced response option responses for all available
+    years. New variables will contain the historically released responses using a
+    standard suffix format of _XXYY, where XX represents the last two digits of the
+    first year that the variable was active, and YY represents the last two digits
+    of the last year that the variable was active (e.g., _0022 designates the trend
+    was active from 2000 to 2022). For more information about these changes, please
+    see Appendix E in the GSS 2024 Codebook.
+  fix: >-
+    Updated response categories. Variables preserving the historical response
+    categories: AGEKDBRN_9422, BABIES_7222, BABIES_EXP_22, CHILDSINHH_2122,
+    CHILDS_EXP_22, CODEN_1222, DENOM_7222, DENOM16_7322, DIPGED_1222, FAMGEN_7522,
+    FAMGEN_EXP_22, HIVTEST1_0622, HIVTEST2_0622, HOMPOP_7222, HOMPOP_EXP_22,
+    MAJOR1_1222, MAJOR2_1222, OTHLANG1_0022, OTHLANG2_0022, PARTNERS_8822,
+    PRETEEN_7222, PRETEEN_EXP_22, RACEACS14_2122, REGION_7222, REG16_7222,
+    RPLACE_7522, SPDEN_7322, TEENS_7222, TEENS_EXP_22, UNRELAT_7222
+  links:
+    - each: [same_item, codes_changed]
+    - pairs: [[agekdbrn, agekdbrn_9422], [babies, babies_7222], [babies_exp, babies_exp_22],
+              [childsinhh, childsinhh_2122], [childs_exp, childs_exp_22], [coden, coden_1222],
+              [denom, denom_7222], [denom16, denom16_7322], [dipged, dipged_1222],
+              [famgen, famgen_7522], [famgen_exp, famgen_exp_22], [hivtest1, hivtest1_0622],
+              [hivtest2, hivtest2_0622], [hompop, hompop_7222], [hompop_exp, hompop_exp_22],
+              [major1, major1_1222], [major2, major2_1222], [othlang1, othlang1_0022],
+              [othlang2, othlang2_0022], [partners, partners_8822], [preteen, preteen_7222],
+              [preteen_exp, preteen_exp_22], [raceacs14, raceacs14_2122], [region, region_7222],
+              [reg16, reg16_7222], [rplace, rplace_7522], [spden, spden_7322],
+              [teens, teens_7222], [teens_exp, teens_exp_22], [unrelat, unrelat_7222]]
+      relations: [same_item, renamed]
+
+- release: 7224r2
+  page: 9
+  years: [2024]
+  variables: [RACECEN1, RACECEN2, RACECEN3]
+  issue: >-
+    In R1, we released a version which only had six categories (e.g., all Asian
+    subgroups were grouped together). With additional time to review disclosure
+    risk, we determined that there were sufficient protections to release a version
+    of these variables which included all Asian subgroups.
+  fix: Expanded response categories
+  links: [{each: [same_item, codes_changed, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2024]
+  variables: [ADULTSINHH]
+  issue: >-
+    During the R1 coding of ADULTSINHH, 24 cases did not properly account for
+    information from the full household composition series which had not been fully
+    processed yet as of R1.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2024]
+  variables: [ETHREGION22]
+  issue: >-
+    In conjunction with our revised disclosure risk, all ETHREGION variables were
+    not meant to be released. ETHREGION22 was erroneously released as part of R1.
+  fix: Recoded to .y "Not available in this year"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2024]
+  variables: [PHONE]
+  issue: >-
+    PHONE was accidentally coded to .y "Not available in this year." This was in
+    error. It will be released in a future data release.
+  fix: Recoded to .x "Not available in this release"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2024]
+  variables: [RELITEN, RELITENNV, RELITENV]
+  issue: >-
+    Based on the full set of religion and denomination responses, some cases needed
+    to have values rearranged between these three variables.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2024]
+  variables: [RINCOME, RINCOM16]
+  issue: >-
+    Following additional review, additional cleanup particularly regarding missing
+    values needed to be reviewed. As such, we identified 188 cases in RINCOME and 59
+    cases in RINCOM16 that needed updates.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2022]
+  variables: [FAMVSWK1]
+  issue: >-
+    Spanish language respondents were given an incorrect translation of this
+    question. All Spanish language cases who received this question (n=41,
+    excluding AmeriSpeak cases) should be recoded.
+  fix: Recoded to .n "No Answer"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2022]
+  variables: [HIVTEST2]
+  issue: >-
+    The original questionnaire response options were not recoded to match the final
+    response options. For example, "Clinic" was assigned response option 5 in the
+    questionnaire but is assigned response option 4 in the final variable.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2022]
+  variables: [HOMPOP_EXP]
+  issue: >-
+    Cases who did NOT receive the Experimental Household Composition module (i.e.,
+    assigned to FORM = 1 or "X") were all assigned a value of 1.
+  fix: Recoded to .i "Not applicable"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 9
+  years: [2022]
+  variables: [INTHISP]
+  issue: Error in coding assigned "Not Hispanic" cases to a value of 0.
+  fix: Recoded to 1 "Not Hispanic"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 10
+  years: [2022]
+  variables: [RLYRLTV]
+  issue: >-
+    The answer option "You cannot rely on either of them" is missing in the data.
+    Punch 8 values were recoded incorrectly and should have been recoded to 0 "You
+    cannot rely on either of them." In addition, Punch 9 was not recoded correctly
+    and should have been coded to .d "Can't choose." 147 cases were impacted by
+    this error.
+  fix: >-
+    Recoded .d to 0 "You cannot rely on either of them". Recoded 9 to .d "Can't choose"
+  links: [{each: [same_item, codes_changed, data_revised]}]
+
+- release: 7224r2
+  page: 10
+  years: [2021]
+  variables: [HOMPOP, CHILDSINHH, ADULTSINHH]
+  issue: >-
+    203 cases have a household size of 0 listed. This is due to a calculation error
+    where CHILDSINHH had a valid value and ADULTSINHH had a missing value
+    (specifically .s "Skipped on web").
+  fix: Recoded to .s "Skipped on web"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 10
+  years: [2021]
+  variables: [USCITZN]
+  issue: >-
+    Given the combination of USCITZN, USCITZNV, and USCITZNNV for 2024 corresponding
+    with disclosure risk protections, there is no reason to not do so as well with
+    2021 for consistency.
+  fix: Included
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 10
+  years: [1976, 1982]
+  variables: [PAIND10]
+  issue: Three cases had invalid industry codes. These have been reviewed and corrected.
+  fix: Corrected
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r2
+  page: 10-12
+  years: [2024]
+  variables: [ACPTTG, ADULTS_EXP, AFRAIDOF, BABIES, BABIES_EXP, CHILDS_EXP, CHNGDOCS,
+              CLOSEBLK, CLOSEWHT, CODEN, COFUND, COIND10, CONINC, CONORELGSP, CONRINC,
+              COOCC10, COPRES10, COPRES105PLUS, COREL, COSEI10, COSEI10EDUC,
+              COSEI10INC, DENOM, DENOM16, DEVTYPE, DISRSPCT, DSDNTPAY, FAMGEN_EXP,
+              FAMILY16SEX, FEOVRWRK, FUND, FUND16, GRNCON, HELPOTH, HHTYPE1,
+              HHTYPE1_EXP, HIVTEST1, HIVTEST2, HOMPOP, HOMPOP_EXP, INDUS10, LIVEBLKS,
+              LIVEWHTS, MAIND10, MAOCC10, MAPRES10, MAPRES105PLUS, MARASIAN, MARBLK,
+              MARHISP, MARWHT, MASEI10, MASEI10EDUC, MASEI10INC, NOATHOME, NODOCIDU,
+              NONURSE, NORELGSP, NORELGSP16, NOTSMART, OBEY, OCC10, PAIND10, PAOCC10,
+              PAPRES10, PAPRES105PLUS, PASEI10, PASEI10EDUC, PASEI10INC, PAWRKGRW,
+              POORSERV, POPULAR, PRESTG10, PRESTG105PLUS, PRETEEN, PRETEEN_EXP,
+              PTNRSXNOW1, REALINC, REALRINC, REFMORWK, REFPROMO, RELIG, RELIG16,
+              RELIGINF, RELTRAD, SEI10, SEI10EDUC, SEI10INC, SEXNOW2, SEXPAID, SPDEN,
+              SPFUND, SPIND10, SPNORELGSP, SPOCC10, SPPRES10, SPPRES105PLUS, SPREL,
+              SPSEI10, SPSEI10EDUC, SPSEI10INC, TEENS, TEENS_EXP, THNKSELF, THREATEN,
+              UNRELAT, WLTHBLKS, WLTHHSPS, WLTHWHTS, WORKBLKS, WORKHARD, WORKHSPS,
+              WORKLESS, WORKWHTS, WRKWAYUP]
+  issue: >-
+    Variables not previously released addressing: Work and occupations; Household
+    composition; Religion; Racial attitudes
+  fix: Included
+  links: [{each: [same_item, data_revised]}]
+
+# --- Release 1 (pages 13-15) --------------------------------------------------
+# Release 1's previous release is a 1972-2022 cumulative file whose release id the
+# notes don't give, and this repo has no data file for it, so these entries make
+# no links yet. They are transcribed so the renames are on record.
+
+- release: 7224r1
+  page: 13
+  years: all
+  variables: [EARNRS, HISPANIC, NUMEMPS, RACECEN1, RACECEN2, RACECEN3, SIBS, USCITZN]
+  issue: >-
+    The GSS team developed an updated plan for the 2024 data release to reduce
+    disclosure risks, especially for demographic variables. The GSS team has chosen
+    to reduce the number of response categories reported for select demographic
+    variables. The default variable names (e.g., EARNRS, HISPANIC) will have the
+    reduced response option responses for all available years. New variables will
+    contain the historically released responses using a standard suffix format of
+    _XXYY, where XX represents the last two digits of the first year that the
+    variable was active, and YY represents the last two digits of the last year that
+    the variable was active (e.g., _0022 designates the trend was active from 2000
+    to 2022). For more information about these changes, please see Appendix E in
+    the GSS 2024 Codebook.
+  fix: >-
+    Updated response categories. Variables preserving the historical response
+    categories: EARNRS_7222, HISPANIC_0022, NUMEMPS_0422, RACECEN1_0022,
+    RACECEN2_0022, RACECEN3_0022, SIBS_7222, USCITZN_0822
+  links:
+    - each: [same_item, codes_changed]
+    - pairs: [[earnrs, earnrs_7222], [hispanic, hispanic_0022], [numemps, numemps_0422],
+              [racecen1, racecen1_0022], [racecen2, racecen2_0022], [racecen3, racecen3_0022],
+              [sibs, sibs_7222], [uscitzn, uscitzn_0822]]
+      relations: [same_item, renamed]
+
+- release: 7224r1
+  page: 13
+  years: multiple
+  variables: [MARHOMO, MARHOMO1, MARSAME, MARSAME1]
+  issue: Updated the name of MARHOMO to be MARSAME, and MARHOMO1 to be MARSAME1.
+  fix: Updated
+  links:
+    - pairs: [[marhomo, marsame], [marhomo1, marsame1]]
+      relations: [same_item, renamed]
+
+- release: 7224r1
+  page: 13
+  years: [2022]
+  variables: [CHNGTME, CHNGTIME]
+  issue: >-
+    The variable name for CHNGTME was changed in 2022 to CHNGTIME to be consistent
+    with the variable name in the questionnaire. Given no changes in the question
+    wording or response options were implemented in association with this change,
+    the responses from CHNGTIME should be moved into CHNGTME to increase ease of
+    analysis of this variable over time.
+  fix: Responses from CHNGTIME moved into CHNGTME. CHNGTIME removed
+  links:
+    - pairs: [[chngtme, chngtme]]
+      relations: [same_item, data_revised]
+    - pairs: [[chngtime, chngtme]]
+      relations: [merged_into]
+
+- release: 7224r1
+  page: 13
+  years: [2022]
+  variables: [NEAELIGIBLE, NEXTELIGIBLE]
+  issue: >-
+    NEASTATUS and NEXTSTATUS previously reported which cases completed the NEA
+    follow-on and GSS Next follow-on, respectively. This indicator did not provide
+    information regarding who was eligible to participate in the follow-on.
+  fix: Included
+  why: New variables; nothing in the previous release to link to.
+
+- release: 7224r1
+  page: 14
+  years: [2022]
+  variables: [NMBRKIDS]
+  issue: >-
+    An error exporting the "None" check box responses unexpectedly incorporated a
+    value of 1 into the numeric field for this variable for 459 cases when it should
+    have been reported as 0.
+  fix: Recoded to 0
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r1
+  page: 14
+  years: [2022]
+  variables: [RACOPENV, RACOPENY]
+  issue: >-
+    Question RACOPEN is included in two experiments (gender-neutral wording and
+    volunteered response). Per the 2022 GSS Codebook, RACOPENV was designated as the
+    reported variable containing data for both experiment "as the -V and -NV effect
+    appears stronger." Despite this assertion, the variable was released as
+    RACOPENY.
+  fix: Responses from RACOPENY moved to RACOPENV. RACOPENY removed
+  links:
+    - pairs: [[racopenv, racopenv]]
+      relations: [same_item, data_revised]
+    - pairs: [[racopeny, racopenv]]
+      relations: [merged_into]
+
+- release: 7224r1
+  page: 14
+  years: [2022]
+  variables: [WRKSTAT, SPWRKSTA]
+  issue: >-
+    Verbatim answers to WRKSTAT and SPWRKSTA option 5 "Other" were not recoded into
+    WRKSTAT and SPWRKSTA categories 1-7.
+  fix: 19 verbatim answers for WRKSTAT were recoded and 11 verbatim answers for SPWRKSTA were recoded
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r1
+  page: 14
+  years: [2021, 2022]
+  variables: [ETHNIC]
+  issue: Respondents who skipped the ETHWORLD series were coded as .i "Not applicable".
+  fix: >-
+    Updated to .d "Don't Know", .n "No Answer", or .s "Skipped on web" as
+    appropriate for each case
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r1
+  page: 14
+  years: [2021, 2022]
+  variables: [ETHREGION95, ETHREGION96]
+  issue: >-
+    A duplicate ETHREGION variable for Jamaica (originally ETHREGION95) was retained
+    in the data when programmatically these responses were already moved to
+    ETHREGION89, the assigned variable for Jamaica. Therefore, the historical
+    version of ETHREGION95 is erroneous.
+  fix: ETHREGION95 is now "Other Oceania". ETHREGION96 removed
+  links:
+    - pairs: [[ethregion96, ethregion95]]
+      relations: [same_item, renamed]
+
+- release: 7224r1
+  page: 14
+  years: [2021, 2022]
+  variables: [ZODIAC]
+  issue: Respondents who did not provide a birth day were incorrectly coded to .i "Not applicable".
+  fix: Updated to .n "No Answer"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r1
+  page: 14
+  years: [2021]
+  variables: [COHORT]
+  issue: Respondents where year of birth was not provided were temporarily coded 9999.
+  fix: Updated to .n "No Answer"
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r1
+  page: 14-15
+  years: [2021]
+  variables: [PRESTG105PLUS, SEI10EDUC, SEI10INC, SPPRES105PLUS, SPSEI10EDUC,
+              SPSEI10INC, PAPRES105PLUS, PASEI10EDUC, PASEI10INC, MAPRES105PLUS,
+              MASEI10EDUC, MASEI10INC, MAJOR1, RESPNUM]
+  issue: >-
+    A number of cases for each of these variables are denoted as .y "Not available
+    in this year" when they should be .i "Not applicable."
+  fix: Cases affected recoded from .y "Not available in this year" to .i "Not applicable."
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r1
+  page: 15
+  years: [2018]
+  variables: [CHNGTME]
+  issue: Previously excluded from the data.
+  fix: Included
+  links: [{each: [same_item, data_revised]}]
+
+- release: 7224r1
+  page: 15
+  years: [2012, 2022]
+  variables: [PAIDLV]
+  issue: >-
+    Old category labels for PAIDLV were an artifact of an older version of PAIDLV.
+    In Release 1 of the 1972-2022 Cumulative File, GSS combined the variables PAIDLV
+    and PAIDLV1 into a single variable to increase analytic efficiency. With this
+    change, category 0 should have been labeled as "No, there should be no paid
+    leave" with the remaining categories representing the number of months of paid
+    leave they felt a new parent should get. Unfortunately, the old value label for
+    response 2 was retained from the old version of PAIDLV.
+  fix: Updated
+  links: [{each: [same_item, codes_changed]}]
+
+- release: 7224r1
+  page: 15
+  years: [1972-1993]
+  variables: [INCDEF, POVLINE]
+  issue: >-
+    Cases considered not imputable for these variables were coded to reserve code
+    .q, which is not an assigned reserve code. Reserve code .p is designated for
+    this purpose.
+  fix: Recoded to .p "Not imputable"
+  links: [{each: [same_item, codes_changed, data_revised]}]
+
+# --- Quick Guide to Variables (Release Variables PDFs) -------------------------
+# NORC's "Quick Guide to Variables in the 2024 GSS Cross-section" marks each 2024
+# variable as released (bold), coming in a future release (regular) or not part of
+# 2024 (struck through). The R3 and R3a guides differ only by these additions, all
+# of which the R3a notes above also list:
+release_variables_r3_to_r3a:
+  source: gss-release-variables-7224r3a
+  added: [ISCO08, SPISCO08, COISCO08, PAISCO08, MAISCO08, VOTE_TS, PRES_TS]
+  note: >-
+    The guide marks status with text render mode 2 (bold), red fill (new in 2024)
+    and drawn strike lines, not with fonts, so pdftotext loses it. Not parsed
+    per variable yet.

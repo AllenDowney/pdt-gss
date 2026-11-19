@@ -16,10 +16,15 @@ sources:
     fetched_on: "2026-02-07"
     sha256: 93bc1791b1325cbc9a18dae8fca94df41cf29c772371b3db9a21447b826e6fe0
     bytes: 21348980
+    version: "0.8.2 (commit 26faf3f, 2025-10-28)"
     note: >
-      gssrdoc scrapes GSS Data Explorer. The gssrdoc version used isn't
-      recorded, and which GSS release it matches is unverified; the build
-      compares it with the 7224r3a data file.
+      gssrdoc scrapes GSS Data Explorer. This file was converted from gssrdoc
+      0.8.2, commit 26faf3f ("Update for 1972-2024 R2 documentation"), the only
+      commit to data/gss_doc.rda between 2025-10-28 and the 2026-02-07 fetch.
+      It documents Release 2, not 3a: its 6,904 names are exactly those of the
+      R2 Stata file, and its 2024 counts match R2 (racopen 462, grass 867).
+      Found in PublicDataToolkit Task 21. gssrdoc 0.9 (commit 112286d,
+      2026-03-12) documents Release 3; no version documents 3a yet.
   - id: gss-stata-7224r3a
     title: GSS 1972-2024 cumulative file, Stata, Release 3a
     kind: data
@@ -48,3 +53,91 @@ sources:
     sha256: cc4e7e15de7cc95db9e4ddbdad2902683caec61321eef8c96df369feda596df2
     bytes: 3356354
     note: Source of the license in NOTICE.md. Not yet parsed.
+  - id: gss-stata-7224r3
+    title: GSS 1972-2024 cumulative file, Stata, Release 3
+    kind: data
+    format: stata
+    path: data/raw/gss7224_r3.dta.gz
+    releases: [7224r3]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: >
+      NORC's download page offers only the current release. This copy was
+      downloaded while Release 3 was current (CultureWar data/raw/GSS_stata_r3.zip),
+      unzipped and gzipped. build/build_links.py reads only its variable names.
+    fetched_on: "2026-03-06"
+    sha256: 8a4984a368c74947562f51ee5e87c9ea42baed78359f242f67f0ba62274ad945
+    bytes: 45046066
+  - id: gss-stata-7224r2
+    title: GSS 1972-2024 cumulative file, Stata, Release 2
+    kind: data
+    format: stata
+    path: data/raw/gss7224_r2.dta.gz
+    releases: [7224r2]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: >
+      NORC's download page offers only the current release. This copy was
+      downloaded while Release 2 was current (CultureWar data/raw/gss7224_r2.dta.gz).
+      build/build_links.py reads only its variable names.
+    fetched_on: "2026-03-21"
+    sha256: eebd26a35fa425ef4a0706429d5591ce2082418bb717ef68b0e33aeb40baea63
+    bytes: 44475859
+    note: fetched_on is the file's date on disk; the download date isn't recorded.
+  - id: gss-release-notes-7224r3a
+    title: Release Notes for GSS 1972-2024 Release 3a (July 2026), with the notes for Releases 3, 2 and 1
+    kind: release_notes
+    format: pdf
+    path: data/raw/Release Notes 7224 R3a.pdf
+    releases: [7224r3a]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: Download from the documentation page at https://gss.norc.org/.
+    fetched_on: "2026-09-07"
+    sha256: 67a5cde4086cd191c12a0b0cc1d3018119cac29ba4cd1f77a647b138d59755fa
+    bytes: 206127
+    note: Transcribed by hand into build/release_notes_7224.yaml, the input to build/build_links.py.
+  - id: gss-release-variables-7224r3a
+    title: Quick Guide to Variables in the 2024 GSS Cross-section (Release 3a)
+    kind: other
+    format: pdf
+    path: data/raw/GSS 2024 Release Variables R3a.pdf
+    releases: [7224r3a]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: Download from the documentation page at https://gss.norc.org/.
+    fetched_on: "2026-09-07"
+    sha256: 3019c7259b51e04b67a3930a1ad974be2e112b52f177437f9968575dc8cb6b24
+    bytes: 170090
+    note: >
+      Marks each 2024 variable as released, coming later or dropped, with
+      bold, red and strike-through styling. Only its differences from the R3
+      guide are recorded (build/release_notes_7224.yaml); not parsed per variable.
+  - id: gss-release-variables-7224r3
+    title: Quick Guide to Variables in the 2024 GSS Cross-section (Release 3)
+    kind: other
+    format: pdf
+    path: data/raw/GSS 2024 Release Variables R3.pdf
+    releases: [7224r3]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: Downloaded from https://gss.norc.org/ while Release 3 was current.
+    fetched_on: "2026-03-11"
+    sha256: 889074f2aa52b0a490264c38c5c9fc638b97569ef117829bb1065269bf359229
+    bytes: 168239
+  - id: gss-whats-new-7224r3a
+    title: What's New in 2024 - The Latest on GSS Methodology, Release 3a
+    kind: release_notes
+    format: pdf
+    path: data/raw/GSS 2024 - Whats New R3a.pdf
+    releases: [7224r3a]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: Download from the documentation page at https://gss.norc.org/.
+    fetched_on: "2026-09-07"
+    sha256: adf8e3d4212a076e1b74cf38a747c55f9511e32c0fbdacd609c4e57147a5bb83
+    bytes: 383171
+    note: >
+      FAQs for R3a, R3, R2 and R1. Its variable-level content (renames,
+      historical preservation, coarsening) is the same as the release notes',
+      which are the source for links.

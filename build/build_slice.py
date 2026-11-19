@@ -5,7 +5,7 @@ Usage:
 
 Reads build/slice.yaml, data/raw/gssrdoc_full.json and
 data/raw/gss7224_r3a.dta.gz. Writes metadata/releases/<release>/variables.jsonl,
-metadata/groups.jsonl, metadata/annotations/gssrdoc_subjects.jsonl,
+metadata/groups.jsonl (batteries, and gssrdoc's subjects as `subject` groups),
 metadata/derived/scale_signature.jsonl and build/report.md.
 
 Corrections (metadata/corrections.jsonl) are written by hand and never touched
@@ -306,6 +306,29 @@ def check_availability(record, frame):
     return notes
 
 
+def subject_groups(names, gdoc):
+    """gssrdoc's subjects (from GSS Data Explorer) as groups of kind `subject` (STANDARD.md §5.1).
+
+    Members are the slice's variables with that subject, in slice order, because
+    a group lists only variables this repo has records for.
+    """
+    members = collections.defaultdict(list)
+    for name in names:
+        for row in json.loads(gdoc[name]["subject_df_json"] or "[]"):
+            for subject in row.values():
+                members[subject].append(name)
+    groups = []
+    for subject in sorted(members):
+        slug = re.sub(r"[^a-z0-9]+", "-", subject.lower()).strip("-")
+        groups.append({
+            "id": f"subject-{slug}", "kind": "subject", "label": subject,
+            "members": [{"name": n} for n in members[subject]], "ordered": False,
+            "origin": {"origin": "upstream_package", "source": GSSRDOC,
+                       "note": "A GSS Data Explorer subject, as gssrdoc records it. Members are limited to "
+                               "the variables in this slice."}})
+    return groups
+
+
 def build_groups(names, gdoc):
     """Batteries by rule: variables whose cleaned question text has the same stem."""
     by_stem = collections.defaultdict(list)
@@ -351,14 +374,11 @@ def main():
     write_jsonl(META / "releases" / spec["release"] / "variables.jsonl", records)
 
     groups, partial = build_groups(names, gdoc)
-    write_jsonl(META / "groups.jsonl", groups)
-
-    subjects = [{"target": {"variable": name}, "kind": "topic", "value": subject,
-                 "origin": {"origin": "upstream_package", "source": GSSRDOC}}
-                for name in names
-                for row in json.loads(gdoc[name]["subject_df_json"] or "[]")
-                for subject in row.values()]
-    write_jsonl(META / "annotations" / "gssrdoc_subjects.jsonl", subjects)
+    subjects = subject_groups(names, gdoc)
+    write_jsonl(META / "groups.jsonl", groups + subjects)
+    old = META / "annotations" / "gssrdoc_subjects.jsonl"
+    if old.exists():
+        old.unlink()  # subjects were annotations before STANDARD.md §5.1 made them groups
 
     signatures = []
     for r in records:
@@ -370,7 +390,7 @@ def main():
     write_jsonl(META / "derived" / "scale_signature.jsonl", signatures)
 
     write_report(spec, records, groups, partial, subjects, signatures, notes, c5)
-    print(f"{len(records)} variables, {len(groups)} groups, {len(subjects)} subject tags, "
+    print(f"{len(records)} variables, {len(groups)} batteries, {len(subjects)} subject groups, "
           f"{len(signatures)} scale signatures; see build/report.md")
 
 
@@ -393,7 +413,7 @@ def write_report(spec, records, groups, partial, subjects, signatures, notes, c5
         f"- With question text: {sum('questions' in r for r in records)}",
         f"- With a stem/item split: {sum(any('stem' in q for q in r.get('questions', [])) for r in records)}",
         f"- Groups (complete batteries): {len(groups)}",
-        f"- Subject tags from gssrdoc: {len(subjects)}",
+        f"- Subject groups from gssrdoc: {len(subjects)}",
         f"- Scale signatures: {len(signatures)}",
         "",
         "## Missing codes that occur, by number of variables",

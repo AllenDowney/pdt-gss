@@ -564,7 +564,6 @@ def main():
             notes.extend(report)
             if name not in {"year", "id", "ballot"}:
                 c5.extend(check_availability(record, facts[name]))
-        write_jsonl(META / "releases" / release / "variables.jsonl", records)
         not_in_gdoc = sorted(n for n in names if n not in gdoc)
         by_release[release] = (records, notes, c5, not_in_gdoc)
 
@@ -582,9 +581,90 @@ def main():
     signatures = scale_signatures([r for records, *_ in by_release.values() for r in records], per_release=False)
     write_jsonl(META / "derived" / "scale_signature.jsonl", signatures)
 
-    write_report(releases, by_release, batteries, subjects, signatures, slice_names)
+    # Rule gss_shared_code_lists (STANDARD.md §4.5): store each long list of valid codes
+    # once, after the signatures, which read every record's full values.
+    code_lists, folded = shared_code_lists(by_release)
+    for release, (records, *_rest) in by_release.items():
+        write_jsonl(META / "releases" / release / "variables.jsonl", folded[release])
+    if code_lists:
+        write_jsonl(META / "code_lists.jsonl", code_lists)
+    elif (META / "code_lists.jsonl").exists():
+        (META / "code_lists.jsonl").unlink()
+
+    write_report(releases, by_release, batteries, subjects, signatures, slice_names, code_lists)
     print(f"{', '.join(f'{r}: {len(v[0])}' for r, v in by_release.items())} variables; {len(batteries)} batteries, "
           f"{len(subjects)} subject groups, {len(signatures)} scale signatures; see build/report.md")
+
+
+SHARED_LIST_RULE, SHARED_LIST_VERSION = "gss_shared_code_lists", "0.1"
+SHARED_LIST_MIN_CODES = 100
+
+
+def valid_prefix(record):
+    """The record's valid codes, when they all come before its other codes (so a list of
+    them, expanded first, rebuilds the record exactly); else None."""
+    values = record.get("values") or []
+    k = 0
+    while k < len(values) and values[k].get("kind") == "valid":
+        k += 1
+    if any(v.get("kind") == "valid" for v in values[k:]):
+        return None
+    return values[:k]
+
+
+def shared_code_lists(by_release):
+    """Rule gss_shared_code_lists 0.1: a list of SHARED_LIST_MIN_CODES or more valid codes that
+    two or more variables share exactly (code and label) is stored once in code_lists.jsonl
+    (STANDARD.md §4.5), and each record names it in code_list and keeps its other codes.
+    Occupation and industry codes for the respondent, spouse, father and mother are the case.
+    The list's id is the first variable that uses it, in file order; with the release added
+    when that variable's list differs between releases.
+
+    Returns (code lists, {release: records with lists folded out})."""
+    uses = {}                              # key -> [(release, name, record)]
+    for release, (records, *_rest) in by_release.items():
+        for r in records:
+            prefix = valid_prefix(r)
+            if prefix and len(prefix) >= SHARED_LIST_MIN_CODES:
+                key = json.dumps([[v["code"], v.get("label")] for v in prefix])
+                uses.setdefault(key, []).append((release, r["name"], r))
+    lists, assigned, ids = [], {}, set()
+    for key, users in uses.items():
+        names = list(dict.fromkeys(n for _, n, _ in users))
+        if len(names) < 2:
+            continue
+        first_release, base, first = users[0]
+        list_id = f"{base}-codes"
+        if list_id in ids:
+            list_id = f"{base}-codes-{first_release}"
+        ids.add(list_id)
+        origin = dict(((first.get("provenance") or {}).get("fields") or {}).get("values")
+                      or (first.get("provenance") or {}).get("record"))
+        origin["note"] = (f"Valid codes and labels, identical in each variable that names this list; stored "
+                          f"once by rule {SHARED_LIST_RULE} {SHARED_LIST_VERSION}.")
+        lists.append({"id": list_id, "label": f"Codes shared by {', '.join(names)}",
+                      "codes": [dict(v) for v in valid_prefix(first)], "origin": origin})
+        for release, name, _ in users:
+            assigned[(release, name)] = list_id
+    folded = {}
+    for release, (records, *_rest) in by_release.items():
+        out = []
+        for r in records:
+            list_id = assigned.get((release, r["name"]))
+            if list_id is None:
+                out.append(r)
+                continue
+            own = (r.get("values") or [])[len(valid_prefix(r)):]
+            r = {k: v for k, v in r.items() if k != "values"}
+            r["code_list"] = list_id
+            if own:
+                r["values"] = own
+            prov = r.get("provenance") or {}
+            r["provenance"] = {**prov, "fields": {**(prov.get("fields") or {}), "code_list": {
+                "origin": "rule", "rule": SHARED_LIST_RULE, "rule_version": SHARED_LIST_VERSION, "source": GSSRDOC}}}
+            out.append(r)
+        folded[release] = out
+    return lists, folded
 
 
 def write_jsonl(path, records):
@@ -607,7 +687,7 @@ def section(title, items, empty="None."):
     return lines + [""]
 
 
-def write_report(releases, by_release, batteries, subjects, signatures, slice_names):
+def write_report(releases, by_release, batteries, subjects, signatures, slice_names, code_lists=()):
     sizes = collections.Counter(len(g["members"]) for g in batteries)
     lines = [
         f"# Build report: GSS, releases {', '.join(by_release)}",
@@ -655,6 +735,9 @@ def write_report(releases, by_release, batteries, subjects, signatures, slice_na
         lines += section("### C4: values that occur without a label or valid range",
                          [x for x in notes if x[0] == "unlabeled"])
         lines += section(f"### C5: documented availability vs the {release} data", c5, "No differences.")
+    if code_lists:
+        lines += ["", f"## Shared code lists ({SHARED_LIST_RULE} {SHARED_LIST_VERSION}): {len(code_lists)}", "",
+                  *[f"- `{cl['id']}`: {len(cl['codes'])} codes; {cl['label']}" for cl in code_lists]]
     (ROOT / "build" / "report.md").write_text("\n".join(lines))
 
 

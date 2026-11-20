@@ -31,6 +31,15 @@ The record format is defined in the [PublicDataToolkit standard](https://github.
 
 Cite the GSS as NORC asks (the `citation` in [`dataset.yaml`](dataset.yaml)), and gssrdoc if you use its text.
 
+## Making an extract
+
+After `make data`, `scripts/extract.py` writes the variables, waves and missing-value handling you choose, for example:
+
+```bash
+python scripts/extract.py --release 7224r3a --vars year,ballot,abany,age --waves 2000-2024 \
+    --missing dk=DK --out abany.csv
+```
+
 ## How to rebuild
 
 With the sources in `data/raw/` and a PublicDataToolkit checkout next to this repo:
@@ -41,3 +50,7 @@ make check
 ```
 
 `build/report.md` lists what the build checked against the data.
+
+## License
+
+Code here is under the MIT License. Our metadata, corrections and generated views are under CC BY 4.0. The publisher's files and documentation keep the publisher's terms (above). See [`LICENSE`](LICENSE).

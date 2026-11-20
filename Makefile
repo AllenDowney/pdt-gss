@@ -17,9 +17,11 @@ CODEBOOK_TXT = data/interim/codebook-2024r3a.txt
 download:
 	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/download.py $(ARGS)
 
-## Write the common-format parquet files in data/processed (the data release)
+## Write the common-format parquet files in data/processed (the data release): the current
+## release only, by default; `make data RELEASES=7224r3` for another. Run it under the memory cap.
+RELEASES ?= 7224r3a
 data:
-	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/build_data.py
+	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/build_data.py $(RELEASES)
 
 ## Assemble the data release in data/release (ship data only; publish it by hand)
 package:

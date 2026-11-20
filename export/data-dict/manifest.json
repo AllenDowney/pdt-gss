@@ -1,6 +1,7 @@
 {
- "pdt_version": "0.1.0",
- "inputs_sha256": "871dd63e5a73cd10f39d0155d93194297cc0cd2ca87bef6e05f1ffbc995c2a60",
+ "pdt_version": "0.2.1",
+ "inputs_sha256": "c42454fc02a5d2451a4b198f159fbe28f0d4db5813b5a7cb1ca40be059cd7d43",
+ "generator_sha256": "6708a578169493f69fc6f399572ef26b8ef504c92cfe881d96369c48f83bc0cd",
  "dataset": "gss",
  "spec": "0.1.0",
  "files": [
@@ -13,7 +14,7 @@
    "release_version": 1,
    "variables": 6943,
    "availability": 58293,
-   "provenance_fields": 34924,
+   "provenance_fields": 34973,
    "numeric_code_labels": 6319,
    "missing_codes": 26786,
    "untyped": 621,
@@ -26,7 +27,7 @@
    "release_version": 1,
    "variables": 6942,
    "availability": 58210,
-   "provenance_fields": 34915,
+   "provenance_fields": 34964,
    "numeric_code_labels": 6318,
    "missing_codes": 26796,
    "untyped": 621,

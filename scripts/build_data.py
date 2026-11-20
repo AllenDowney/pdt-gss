@@ -29,4 +29,6 @@ def read(release, table, names):
 
 
 if __name__ == "__main__":
-    write_release(ROOT, read)
+    # The releases named on the command line (make data passes RELEASES, 7224r3a by default);
+    # all of them with no arguments.
+    write_release(ROOT, read, releases=sys.argv[1:] or None)

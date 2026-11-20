@@ -1,6 +1,7 @@
 {
- "pdt_version": "0.1.0",
- "inputs_sha256": "871dd63e5a73cd10f39d0155d93194297cc0cd2ca87bef6e05f1ffbc995c2a60",
+ "pdt_version": "0.2.1",
+ "inputs_sha256": "c42454fc02a5d2451a4b198f159fbe28f0d4db5813b5a7cb1ca40be059cd7d43",
+ "generator_sha256": "6708a578169493f69fc6f399572ef26b8ef504c92cfe881d96369c48f83bc0cd",
  "dataset": "gss",
  "max_tokens": 20000,
  "shards": [
@@ -27,61 +28,61 @@
      "path": "shards/table/7224r3a.part1.jsonl",
      "form": "jsonl",
      "variables": 13,
-     "tokens": 19560
+     "tokens": 19598
     },
     {
      "path": "shards/table/7224r3a.part2.jsonl",
      "form": "jsonl",
      "variables": 11,
-     "tokens": 18687
+     "tokens": 18725
     },
     {
      "path": "shards/table/7224r3a.part3.jsonl",
      "form": "jsonl",
      "variables": 21,
-     "tokens": 18230
+     "tokens": 18269
     },
     {
      "path": "shards/table/7224r3a.part4.jsonl",
      "form": "jsonl",
      "variables": 3,
-     "tokens": 14885
+     "tokens": 14923
     },
     {
      "path": "shards/table/7224r3a.part5.jsonl",
      "form": "jsonl",
      "variables": 8,
-     "tokens": 19368
+     "tokens": 19406
     },
     {
      "path": "shards/table/7224r3a.part6.jsonl",
      "form": "jsonl",
      "variables": 6,
-     "tokens": 18807
+     "tokens": 18845
     },
     {
      "path": "shards/table/7224r3a.part7.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 19218
+     "tokens": 19276
     },
     {
      "path": "shards/table/7224r3a.part8.jsonl",
      "form": "jsonl",
      "variables": 8,
-     "tokens": 19333
+     "tokens": 19371
     },
     {
      "path": "shards/table/7224r3a.part9.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 16485
+     "tokens": 16523
     },
     {
      "path": "shards/table/7224r3a.part10.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19334
+     "tokens": 19372
     },
     {
      "path": "shards/table/7224r3a.part11.jsonl",
@@ -123,19 +124,19 @@
      "path": "shards/table/7224r3a.part17.jsonl",
      "form": "jsonl",
      "variables": 36,
-     "tokens": 19325
+     "tokens": 19344
     },
     {
      "path": "shards/table/7224r3a.part18.jsonl",
      "form": "jsonl",
      "variables": 28,
-     "tokens": 19305
+     "tokens": 19342
     },
     {
      "path": "shards/table/7224r3a.part19.jsonl",
      "form": "jsonl",
      "variables": 27,
-     "tokens": 19292
+     "tokens": 19311
     },
     {
      "path": "shards/table/7224r3a.part20.jsonl",
@@ -297,7 +298,7 @@
      "path": "shards/table/7224r3a.part46.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19542
+     "tokens": 19582
     },
     {
      "path": "shards/table/7224r3a.part47.jsonl",
@@ -309,13 +310,13 @@
      "path": "shards/table/7224r3a.part48.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16266
+     "tokens": 16305
     },
     {
      "path": "shards/table/7224r3a.part49.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19539
+     "tokens": 19579
     },
     {
      "path": "shards/table/7224r3a.part50.jsonl",
@@ -327,13 +328,13 @@
      "path": "shards/table/7224r3a.part51.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16396
+     "tokens": 16435
     },
     {
      "path": "shards/table/7224r3a.part52.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19541
+     "tokens": 19581
     },
     {
      "path": "shards/table/7224r3a.part53.jsonl",
@@ -867,7 +868,7 @@
      "path": "shards/table/7224r3a.part141.jsonl",
      "form": "jsonl",
      "variables": 30,
-     "tokens": 19358
+     "tokens": 19434
     },
     {
      "path": "shards/table/7224r3a.part142.jsonl",
@@ -921,31 +922,31 @@
      "path": "shards/table/7224r3a.part150.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 12044
+     "tokens": 12063
     },
     {
      "path": "shards/table/7224r3a.part151.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 12067
+     "tokens": 12086
     },
     {
      "path": "shards/table/7224r3a.part152.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 12067
+     "tokens": 12086
     },
     {
      "path": "shards/table/7224r3a.part153.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 12034
+     "tokens": 12053
     },
     {
      "path": "shards/table/7224r3a.part154.jsonl",
      "form": "jsonl",
      "variables": 28,
-     "tokens": 19556
+     "tokens": 19575
     },
     {
      "path": "shards/table/7224r3a.part155.jsonl",
@@ -1023,13 +1024,13 @@
      "path": "shards/table/7224r3a.part167.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 17776
+     "tokens": 17814
     },
     {
      "path": "shards/table/7224r3a.part168.jsonl",
      "form": "jsonl",
      "variables": 48,
-     "tokens": 19472
+     "tokens": 19490
     },
     {
      "path": "shards/table/7224r3a.part169.jsonl",
@@ -1065,13 +1066,13 @@
      "path": "shards/table/7224r3a.part174.jsonl",
      "form": "jsonl",
      "variables": 8,
-     "tokens": 18109
+     "tokens": 18130
     },
     {
      "path": "shards/table/7224r3a.part175.jsonl",
      "form": "jsonl",
      "variables": 13,
-     "tokens": 7991
+     "tokens": 8011
     },
     {
      "path": "shards/table/7224r3a.part1.txt",
@@ -1218,61 +1219,61 @@
      "path": "shards/table/7224r3.part1.jsonl",
      "form": "jsonl",
      "variables": 13,
-     "tokens": 19550
+     "tokens": 19588
     },
     {
      "path": "shards/table/7224r3.part2.jsonl",
      "form": "jsonl",
      "variables": 11,
-     "tokens": 18679
+     "tokens": 18717
     },
     {
      "path": "shards/table/7224r3.part3.jsonl",
      "form": "jsonl",
      "variables": 21,
-     "tokens": 18217
+     "tokens": 18256
     },
     {
      "path": "shards/table/7224r3.part4.jsonl",
      "form": "jsonl",
      "variables": 3,
-     "tokens": 14927
+     "tokens": 14965
     },
     {
      "path": "shards/table/7224r3.part5.jsonl",
      "form": "jsonl",
      "variables": 8,
-     "tokens": 19361
+     "tokens": 19399
     },
     {
      "path": "shards/table/7224r3.part6.jsonl",
      "form": "jsonl",
      "variables": 6,
-     "tokens": 18802
+     "tokens": 18840
     },
     {
      "path": "shards/table/7224r3.part7.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 19214
+     "tokens": 19272
     },
     {
      "path": "shards/table/7224r3.part8.jsonl",
      "form": "jsonl",
-     "variables": 9,
-     "tokens": 19600
+     "variables": 8,
+     "tokens": 19364
     },
     {
      "path": "shards/table/7224r3.part9.jsonl",
      "form": "jsonl",
-     "variables": 4,
-     "tokens": 16207
+     "variables": 5,
+     "tokens": 16519
     },
     {
      "path": "shards/table/7224r3.part10.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19328
+     "tokens": 19366
     },
     {
      "path": "shards/table/7224r3.part11.jsonl",
@@ -1314,19 +1315,19 @@
      "path": "shards/table/7224r3.part17.jsonl",
      "form": "jsonl",
      "variables": 36,
-     "tokens": 19306
+     "tokens": 19325
     },
     {
      "path": "shards/table/7224r3.part18.jsonl",
      "form": "jsonl",
      "variables": 28,
-     "tokens": 19289
+     "tokens": 19327
     },
     {
      "path": "shards/table/7224r3.part19.jsonl",
      "form": "jsonl",
      "variables": 27,
-     "tokens": 19277
+     "tokens": 19296
     },
     {
      "path": "shards/table/7224r3.part20.jsonl",
@@ -1488,7 +1489,7 @@
      "path": "shards/table/7224r3.part46.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19537
+     "tokens": 19577
     },
     {
      "path": "shards/table/7224r3.part47.jsonl",
@@ -1500,13 +1501,13 @@
      "path": "shards/table/7224r3.part48.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16263
+     "tokens": 16301
     },
     {
      "path": "shards/table/7224r3.part49.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19534
+     "tokens": 19574
     },
     {
      "path": "shards/table/7224r3.part50.jsonl",
@@ -1518,13 +1519,13 @@
      "path": "shards/table/7224r3.part51.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16393
+     "tokens": 16431
     },
     {
      "path": "shards/table/7224r3.part52.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 19536
+     "tokens": 19576
     },
     {
      "path": "shards/table/7224r3.part53.jsonl",
@@ -2052,13 +2053,13 @@
      "path": "shards/table/7224r3.part140.jsonl",
      "form": "jsonl",
      "variables": 34,
-     "tokens": 19026
+     "tokens": 19045
     },
     {
      "path": "shards/table/7224r3.part141.jsonl",
      "form": "jsonl",
      "variables": 33,
-     "tokens": 19501
+     "tokens": 19558
     },
     {
      "path": "shards/table/7224r3.part142.jsonl",
@@ -2106,31 +2107,31 @@
      "path": "shards/table/7224r3.part149.jsonl",
      "form": "jsonl",
      "variables": 19,
-     "tokens": 19197
+     "tokens": 19216
     },
     {
      "path": "shards/table/7224r3.part150.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 12092
+     "tokens": 12111
     },
     {
      "path": "shards/table/7224r3.part151.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 12092
+     "tokens": 12111
     },
     {
      "path": "shards/table/7224r3.part152.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 12059
+     "tokens": 12078
     },
     {
      "path": "shards/table/7224r3.part153.jsonl",
      "form": "jsonl",
      "variables": 28,
-     "tokens": 19561
+     "tokens": 19580
     },
     {
      "path": "shards/table/7224r3.part154.jsonl",
@@ -2208,13 +2209,13 @@
      "path": "shards/table/7224r3.part166.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 18058
+     "tokens": 18096
     },
     {
      "path": "shards/table/7224r3.part167.jsonl",
      "form": "jsonl",
      "variables": 48,
-     "tokens": 19446
+     "tokens": 19465
     },
     {
      "path": "shards/table/7224r3.part168.jsonl",
@@ -2250,13 +2251,13 @@
      "path": "shards/table/7224r3.part173.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 16900
+     "tokens": 16921
     },
     {
      "path": "shards/table/7224r3.part174.jsonl",
      "form": "jsonl",
      "variables": 13,
-     "tokens": 7983
+     "tokens": 8004
     },
     {
      "path": "shards/table/7224r3.part1.txt",
@@ -4878,7 +4879,7 @@
      "path": "shards/group/battery-commute.jsonl",
      "form": "jsonl",
      "variables": 6,
-     "tokens": 7632
+     "tokens": 7651
     },
     {
      "path": "shards/group/battery-commute.txt",
@@ -6678,7 +6679,7 @@
      "path": "shards/group/battery-ethnic.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 7088
+     "tokens": 7164
     },
     {
      "path": "shards/group/battery-ethnic.txt",
@@ -10212,7 +10213,7 @@
      "path": "shards/group/battery-kdind80.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16292
+     "tokens": 16330
     },
     {
      "path": "shards/group/battery-kdind80.txt",
@@ -10896,13 +10897,13 @@
      "path": "shards/group/battery-maind10.part1.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16242
+     "tokens": 16280
     },
     {
      "path": "shards/group/battery-maind10.part2.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 17749
+     "tokens": 17787
     },
     {
      "path": "shards/group/battery-maind10.txt",
@@ -12990,7 +12991,7 @@
      "path": "shards/group/battery-paind16.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 5823
+     "tokens": 5843
     },
     {
      "path": "shards/group/battery-paind16.txt",
@@ -15870,7 +15871,7 @@
      "path": "shards/group/battery-sbind80.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16422
+     "tokens": 16460
     },
     {
      "path": "shards/group/battery-sbind80.txt",
@@ -17130,7 +17131,7 @@
      "path": "shards/group/battery-spind.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 6012
+     "tokens": 6031
     },
     {
      "path": "shards/group/battery-spind.txt",
@@ -20672,13 +20673,13 @@
      "path": "shards/subject/children.part3.jsonl",
      "form": "jsonl",
      "variables": 27,
-     "tokens": 19481
+     "tokens": 19500
     },
     {
      "path": "shards/subject/children.part4.jsonl",
      "form": "jsonl",
      "variables": 31,
-     "tokens": 19506
+     "tokens": 19525
     },
     {
      "path": "shards/subject/children.part5.jsonl",
@@ -21716,13 +21717,13 @@
      "path": "shards/subject/ethnicity.part1.jsonl",
      "form": "jsonl",
      "variables": 33,
-     "tokens": 18794
+     "tokens": 18832
     },
     {
      "path": "shards/subject/ethnicity.part2.jsonl",
      "form": "jsonl",
      "variables": 10,
-     "tokens": 9199
+     "tokens": 9237
     },
     {
      "path": "shards/subject/ethnicity.txt",
@@ -22734,19 +22735,19 @@
      "path": "shards/subject/industry.part1.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 18855
+     "tokens": 18932
     },
     {
      "path": "shards/subject/industry.part2.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 14830
+     "tokens": 14888
     },
     {
      "path": "shards/subject/industry.part3.jsonl",
      "form": "jsonl",
      "variables": 3,
-     "tokens": 10356
+     "tokens": 10395
     },
     {
      "path": "shards/subject/industry.txt",
@@ -23096,7 +23097,7 @@
      "path": "shards/subject/language.part2.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 5855
+     "tokens": 5896
     },
     {
      "path": "shards/subject/language.txt",
@@ -23682,67 +23683,67 @@
      "path": "shards/subject/occupation.part1.jsonl",
      "form": "jsonl",
      "variables": 8,
-     "tokens": 17778
+     "tokens": 17817
     },
     {
      "path": "shards/subject/occupation.part2.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 15979
+     "tokens": 16017
     },
     {
      "path": "shards/subject/occupation.part3.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 11870
+     "tokens": 11909
     },
     {
      "path": "shards/subject/occupation.part4.jsonl",
      "form": "jsonl",
      "variables": 3,
-     "tokens": 14904
+     "tokens": 14942
     },
     {
      "path": "shards/subject/occupation.part5.jsonl",
      "form": "jsonl",
      "variables": 5,
-     "tokens": 18598
+     "tokens": 18636
     },
     {
      "path": "shards/subject/occupation.part6.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 19237
+     "tokens": 19295
     },
     {
      "path": "shards/subject/occupation.part7.jsonl",
      "form": "jsonl",
      "variables": 2,
-     "tokens": 17234
+     "tokens": 17272
     },
     {
      "path": "shards/subject/occupation.part8.jsonl",
      "form": "jsonl",
      "variables": 4,
-     "tokens": 16230
+     "tokens": 16268
     },
     {
      "path": "shards/subject/occupation.part9.jsonl",
      "form": "jsonl",
-     "variables": 8,
-     "tokens": 19612
+     "variables": 7,
+     "tokens": 19362
     },
     {
      "path": "shards/subject/occupation.part10.jsonl",
      "form": "jsonl",
-     "variables": 8,
-     "tokens": 18656
+     "variables": 9,
+     "tokens": 18982
     },
     {
      "path": "shards/subject/occupation.part11.jsonl",
      "form": "jsonl",
      "variables": 12,
-     "tokens": 19436
+     "tokens": 19474
     },
     {
      "path": "shards/subject/occupation.part12.jsonl",
@@ -24448,13 +24449,13 @@
      "path": "shards/subject/religion.part1.jsonl",
      "form": "jsonl",
      "variables": 35,
-     "tokens": 19217
+     "tokens": 19236
     },
     {
      "path": "shards/subject/religion.part2.jsonl",
      "form": "jsonl",
      "variables": 28,
-     "tokens": 19238
+     "tokens": 19276
     },
     {
      "path": "shards/subject/religion.part3.jsonl",
@@ -24896,7 +24897,7 @@
      "path": "shards/subject/siblings.part2.jsonl",
      "form": "jsonl",
      "variables": 7,
-     "tokens": 17494
+     "tokens": 17532
     },
     {
      "path": "shards/subject/siblings.txt",
@@ -26811,6 +26812,7 @@
    ]
   }
  ],
+ "release_shards": 12,
  "across_releases": [
   {
    "path": "variables.part1.txt",

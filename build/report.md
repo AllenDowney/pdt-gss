@@ -338,3 +338,19 @@ counts: 25, forms: 196, years: 4
 - `extrapay`: ballots with data but not documented []; documented but no data [(2022, 'A')]
 - `extrayr`: ballots with data but not documented []; documented but no data [(2022, 'A')]
 - ... and 185 more
+
+
+## Shared code lists (gss_shared_code_lists 0.1): 12
+
+- `industry-codes`: 213 codes; Codes shared by industry, spind, paind16
+- `occ80-codes`: 505 codes; Codes shared by occ80, spocc80, paocc80, maocc80
+- `indus80-codes`: 232 codes; Codes shared by indus80, spind80, paind80, maind80, kdind80, sbind80
+- `occ10-codes`: 540 codes; Codes shared by occ10, spocc10, coocc10, paocc10, maocc10, occ10_next
+- `indus10-codes`: 271 codes; Codes shared by indus10, spind10, coind10, paind10, maind10, indus10_next
+- `other-codes`: 217 codes; Codes shared by other, oth16, spother, coother, other_next
+- `sphedocc10-codes`: 540 codes; Codes shared by sphedocc10, kdocc10, sbocc10
+- `sphedind10-codes`: 270 codes; Codes shared by sphedind10, kdind10, sbind10
+- `kdocc80-codes`: 504 codes; Codes shared by kdocc80, sbocc80
+- `ethnic-codes`: 102 codes; Codes shared by ethnic, eth1, eth2, eth3
+- `isco08-codes`: 587 codes; Codes shared by isco08, paisco08, maisco08, spisco08, coisco08
+- `othlang1_0022-codes`: 193 codes; Codes shared by othlang1_0022, othlang2_0022

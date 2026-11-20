@@ -16,6 +16,8 @@ The GSS codebook may be used, copied, modified and distributed free of charge, p
 
 The data isn't in this repository. Download the cumulative Stata file from NORC; [`sources.yaml`](sources.yaml) gives the steps and checksums. A GitHub release of the data is planned.
 
+The data release covers the current release, 7224r3a, only. Both releases keep their records, links and views. `make data` writes `data/processed/gss-7224r3a.parquet` in the common format; `make data RELEASES=7224r3` writes the earlier release, from its own Stata file. Run either under a memory cap: for the full release, `make data` takes about 50 minutes and up to about 5 GB.
+
 ## The metadata
 
 - [`metadata/releases/7224r3a/variables.jsonl`](metadata/releases/7224r3a/variables.jsonl): one record per variable: label, question text, codes with typed missing values, years and ballots asked, and where each fact came from.

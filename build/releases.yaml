@@ -1,0 +1,11 @@
+# The releases build/build_records.py builds, each from its own Stata file.
+# Every release's documentation is gssrdoc 0.9, which documents Release 3;
+# `documented_by` says when a release's text is another release's (Task 21).
+releases:
+  "7224r3":
+    stata: gss7224_r3.dta.gz
+    stata_source: gss-stata-7224r3
+  "7224r3a":
+    stata: gss7224_r3a.dta.gz
+    stata_source: gss-stata-7224r3a
+    documented_by: 7224r3

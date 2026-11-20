@@ -15,7 +15,7 @@
 # An entry with no `links` asserts nothing we can model; `why` says why.
 
 source: gss-release-notes-7224r3a
-author: Allen Downey
+author: Claude (PublicDataToolkit Task 21)
 transcribed_on: "2026-11-19"
 
 # Names printed wrong in the notes, kept as printed in `variables` and mapped here

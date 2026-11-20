@@ -9,8 +9,21 @@ GSSRDOC_COMMIT = 112286deecd7e11b605afda8734ac1c08304726c
 GSSRDOC_SHA256 = 2e55bf5640ca8f291332c4d6a0485f4cecdbe9d64164baa6e2da7e87bb4661fe
 GSSRDOC_RDA = data/raw/gssrdoc-0.9/gss_doc.rda
 GSSRDOC_JSON = data/interim/gssrdoc-0.9.json
+CODEBOOK_TXT = data/interim/codebook-2024r3a.txt
 
-.PHONY: gssrdoc build views check
+.PHONY: download data package gssrdoc codebook build views check
+
+## Fetch the sources into data/raw. Read NORC's terms first, then: make download ARGS=--accept-terms
+download:
+	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/download.py $(ARGS)
+
+## Write the common-format parquet files in data/processed (the data release)
+data:
+	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/build_data.py
+
+## Assemble the data release in data/release (ship data only; publish it by hand)
+package:
+	PYTHONPATH=$(PDT)/lib $(PYTHON) -m pdt package .
 
 ## Fetch gssrdoc's gss_doc.rda at the pinned commit, check it, and convert it to JSON
 gssrdoc: $(GSSRDOC_JSON)
@@ -24,9 +37,16 @@ $(GSSRDOC_JSON): $(GSSRDOC_RDA) build/convert_gssrdoc.R
 	mkdir -p $(dir $@)
 	$(RSCRIPT) build/convert_gssrdoc.R $< $@
 
-## Build metadata records and links from data/raw (build/build_slice.py, build/build_links.py)
-build: $(GSSRDOC_JSON)
-	$(PYTHON) build/build_slice.py
+## NORC's 2024 codebook as text (pdftotext, from poppler), for variables gssrdoc lacks
+codebook: $(CODEBOOK_TXT)
+
+$(CODEBOOK_TXT):
+	mkdir -p $(dir $@)
+	pdftotext -layout "data/raw/GSS 2024 Codebook R3a.pdf" $@
+
+## Build every release's records, then links (build/build_records.py, build/build_links.py)
+build: $(GSSRDOC_JSON) $(CODEBOOK_TXT)
+	PYTHONPATH=$(PDT)/lib $(PYTHON) build/build_records.py
 	$(PYTHON) build/build_links.py
 
 ## Generate agent/, docs/ and export/ from the records (pdt views)

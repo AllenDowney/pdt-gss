@@ -44,6 +44,16 @@ dimensions:
     note: >
       From 1988 on, the sample is split across ballots A, B and C (and D from
       2002), and many items are asked on some ballots only.
+design:
+  weights: [wtssps, wtssnrps, wtssall, wtss, wtssnr]
+  strata: vstrat
+  psu: vpsu
+  note: >
+    The weights in the data file, by name; which suits an analysis is the
+    user's choice. wtssps and wtssnrps cover 1972-2024 and 2004-2024; wtssall,
+    wtss and wtssnr end in 2018. The 2024 follow-on items have their own
+    weights (wtssps_next, wtssnrps_next). vstrat and vpsu start in 1975. Names
+    from the 7224r3a data file; chosen by Claude (PublicDataToolkit Task 26).
 releases:
   - id: 7224r3a
     label: GSS 1972-2024 Cross-Sectional Cumulative Data, Release 3a

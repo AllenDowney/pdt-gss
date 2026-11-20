@@ -1,6 +1,6 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "5027ba57c9024cb8ef7101094e917c06f3537c9d7c54ba7cca799b19ebde4fdf",
+ "inputs_sha256": "871dd63e5a73cd10f39d0155d93194297cc0cd2ca87bef6e05f1ffbc995c2a60",
  "dataset": "gss",
  "spec": "0.1.0",
  "files": [
@@ -11,27 +11,29 @@
  "losses": {
   "7224r3a": {
    "release_version": 1,
-   "variables": 50,
-   "availability": 2871,
-   "provenance_fields": 308,
-   "numeric_code_labels": 47,
-   "missing_codes": 182,
+   "variables": 6943,
+   "availability": 58293,
+   "provenance_fields": 34924,
+   "numeric_code_labels": 6319,
+   "missing_codes": 26786,
+   "untyped": 621,
    "corrections": 4,
-   "groups": 25,
-   "links": 50,
-   "derived": 27
+   "groups": 654,
+   "links": 6974,
+   "derived": 1341
   },
   "7224r3": {
    "release_version": 1,
-   "variables": 50,
-   "availability": 2871,
-   "provenance_fields": 308,
-   "numeric_code_labels": 47,
-   "missing_codes": 182,
+   "variables": 6942,
+   "availability": 58210,
+   "provenance_fields": 34915,
+   "numeric_code_labels": 6318,
+   "missing_codes": 26796,
+   "untyped": 621,
    "corrections": 4,
-   "groups": 25,
-   "links": 50,
-   "derived": 27
+   "groups": 654,
+   "links": 6974,
+   "derived": 1341
   }
  }
 }
